@@ -1,0 +1,87 @@
+{
+    "id": "",
+    "nomeVariacao": "",
+    "codigo": "",
+    "preco": "",
+    "tipo": "P",
+    "situacao": "A",
+    "formato": "S",
+    "descricaoCurta": "",
+    "dataValidade": "",
+    "unidade": "Mt",
+    "pesoLiquido": "",
+    "pesoBruto": "",
+    "volumes": "",
+    "itensPorCaixa": "",
+    "gtin": "",
+    "gtinEmbalagem": "",
+    "tipoProducao": "T",
+    "condicao": 1,
+    "freteGratis": "False",
+    "marca": "",
+    "descricaoComplementar": "",
+    "linkExterno": "",
+    "observacoes": "",
+    "categoria": {
+      "id": ""
+    },
+    "produtoPai": {
+        "cloneInfo": "False"
+      },
+    "estoque": {
+      "minimo": "",
+      "maximo": "",
+      "crossDocking": "",
+      "localizacao": ""
+    },
+    "actionEstoque": "",
+    "dimensoes": {
+      "largura": "",
+      "altura": "",
+      "profundidade": "",
+      "unidadeMedida": 2
+    },
+    "tributacao": {
+      "origem": "",
+      "nFCI": "",
+      "ncm": "",
+      "cest": "",
+      "codigoListaServicos": "",
+      "spedTipoItem": "",
+      "codigoItem": "",
+      "percentualTributos": 0,
+      "valorBaseStRetencao": 0,
+      "valorStRetencao": 0,
+      "valorICMSSubstituto": 0,
+      "codigoExcecaoTipi": "",
+      "classeEnquadramentoIpi": "",
+      "valorIpiFixo": 0,
+      "codigoSeloIpi": "",
+      "valorPisFixo": 0,
+      "valorCofinsFixo": 0,
+      "codigoANP": "",
+      "descricaoANP": "",
+      "percentualGLP": 0,
+      "percentualGasNacional": 0,
+      "percentualGasImportado": 0,
+      "valorPartida": 0,
+      "tipoArmamento": 0,
+      "descricaoCompletaArmamento": "",
+      "dadosAdicionais": "",
+      "grupoProduto": {
+        "id": ""
+      }
+    },
+    "midia": {
+      "video": {
+        "url": ""
+      },
+      "imagens": {
+        "externas": [
+          {
+            "link": ""
+          }
+        ]
+      }
+    }
+  }
