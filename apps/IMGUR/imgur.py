@@ -253,7 +253,7 @@ class Imgur():
     
     album = self.create_album(title)
     
-    album_id = album['data']['id']
+    album_id = album['id']
     
     images = self.upload_images(folder_path, album_id=album_id)['data']
     

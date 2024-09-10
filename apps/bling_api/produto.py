@@ -204,13 +204,13 @@ class Produto(BlingApi):
                 
     def check_exists_album_title(self, title):
         albums = self.imgur.get_albums()
+       
         
         for album in albums:
-            
-            if title in album['title']:
+            if album.get('title') and title in album.get('title'):
                 return album['id']
-            else:
-                return False
+            
+        return False
    
     def generate_colorname_and_codsku(self, color, changed_name):
                 
@@ -274,5 +274,5 @@ class Produto(BlingApi):
         
             if response.status_code == 201:
                 print('Lançamento de estoque: OK')
-        
             
+

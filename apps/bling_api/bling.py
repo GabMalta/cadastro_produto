@@ -11,16 +11,16 @@ class BlingApi():
     def __init__(self, client_id:str = '', client_secret:str = ''):
         
         if client_id and client_secret:
-        
             self.client_id = client_id
             self.client_secret = client_secret
         else:
             self.client_id = settings.CLIENT_ID
             self.client_secret = settings.CLIENT_SECRET
         
-        self.generate_base64_credential()
         self.get_access_token()
         self.get_refresh_token()
+            
+        self.generate_base64_credential()
         
         self.update_access_token()
         
@@ -34,6 +34,7 @@ class BlingApi():
             self.credential_base64 = base64_bytes.decode('utf-8')
         else:
             raise ValueError('client_id ou client_secret incorreto ou não encontrado')
+    
            
     def get_access_token(self):
         with open(os.path.join(settings.PATH_SRC, 'tokens/access_token.txt'), 'r') as token:
@@ -77,6 +78,7 @@ class BlingApi():
             except requests.exceptions.HTTPError as err:
                 try:
                     error = err.response.json()
+                    print(error)
                     type_error = error['error']['description']
                     
                     match type_error:
@@ -86,6 +88,7 @@ class BlingApi():
                             msg = 'Refresh token inválido ou expirado, gere novos tokens'
                             self.set_access_token('')
                             self.set_refresh_token('')
+                            self.generate_access_token()
 
                     print(f'{type_error}: {msg}')
                 
@@ -119,12 +122,24 @@ class BlingApi():
         except requests.exceptions.HTTPError as err:
             try:
                 error = err.response.json()['error']['description']
+                print(error)
                 match error:
                     case 'The authorization code has expired':
                         msg = 'Código de autorização expirado, gere um novo e lembre-se que ele tem apenas 1 minuto de duração!'
                     case "Authorization code doesn't exist or is invalid for the client":
                         msg = 'Código de autorização inválido'
+                    case _:
+                        msg = 'Erro desconhecido'
                     
                 print(f'{error}: {msg}')
             except Exception as ex:
                 print(ex)
+                
+    def get_id_deposito(self):
+        
+        link = f'https://www.bling.com.br/Api/v3/depositos'
+        headers = {"Authorization": f"Bearer {self.access_token}", "Content-Type": "application/json"}
+        
+        response = http.get(link, headers=headers).json()
+        
+        print(response)

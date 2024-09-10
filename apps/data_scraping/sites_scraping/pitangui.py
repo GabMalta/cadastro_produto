@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from data_scraping.utils.selenium_webdriver import create_webdriver
+from apps.data_scraping.utils.selenium_webdriver import create_webdriver
 
 def pitangui_scraping(cod, fabric_name):
     nav = create_webdriver()
@@ -42,7 +42,7 @@ def pitangui_scraping(cod, fabric_name):
     
     response = {
         'fabric_name': fabric_name,
-        'cod': cod,
+        'cod': f'P{cod}',
         'folder_name': folder_name,
         'composition': composition,
         'width': width,

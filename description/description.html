@@ -1,0 +1,24 @@
+<h3 style="text-align: center;"><span><u>Cada unidade representa {{mt}} metros de tecido e cada unidade comprada será cortado o total de metragem linear.</u></span></h3>
+<h3 style="text-align: center;"><span><u>Por exemplo:</u></span></h3>
+<h3 style="text-align: center;"><span><u> </u></span></h3>
+<h3 style="text-align: center;"><span><u>1 unidade: {{mt}}m x {{larg}}m</u></span></h3>
+<h3 style="text-align: center;"><span><u>2 unidades: {{mt*2}}m x {{larg}}m</u></span></h3>
+<h3 style="text-align: center;"><span><u>3 unidades: {{mt*3}}m x {{larg}}m</u></span></h3>
+<h3 style="text-align: center;"><span><u> </u></span></h3>
+<h3 style="text-align: center;"><u><span style="vertical-align: inherit;"></span></u></h3>
+<h3 style="text-align: center;"><span><u>e assim sucessivamente.</u></span></h3>
+
+<h3 style="text-align: center;"><span style="text-decoration-line: underline;"><span><span style="vertical-align: inherit;"></span></span></span></h3>
+<h3 style="text-align: center;"><span style="text-decoration-line: underline;"><span>Informações do Tecido</span></span></h3>
+<p style="text-align: center;"><strong>{{nome}}</strong></p>
+<p style="text-align: center;"><strong>Composição: {{composition}}</strong></p>
+<p style="text-align: center;"><strong>Largura : {{larg}} Metros</strong></p>
+
+{% if desc_gpt %}
+<h2 style="text-align: center;"><span style="text-decoration-line: underline;">Utilidades Para O {{nome}}</span></h2>
+<pre style="text-align: center;">
+    {{desc_gpt}}
+</pre>
+
+
+{% endif %}
