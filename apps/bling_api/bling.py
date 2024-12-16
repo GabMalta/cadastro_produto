@@ -4,7 +4,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 import requests
 import base64
 from requests_policy.http import http
-from apps.bling_api import settings
+from bling_api import settings
 
 class BlingApi():
     
@@ -143,3 +143,21 @@ class BlingApi():
         response = http.get(link, headers=headers).json()
         
         print(response)
+
+    def get_product(self, id_product):
+        
+        link = f'https://www.bling.com.br/Api/v3/produtos/{id_product}'
+        headers = {"Authorization": f"Bearer {self.access_token}", "Content-Type": "application/json"}
+        
+        response = http.get(link, headers=headers).json()
+        
+        return response
+    
+    def get_nfs(self, situacao=1):
+        
+        link = f'https://bling.com.br/Api/v3/nfe?situacao={situacao}'
+        headers = {"Authorization": f"Bearer {self.access_token}", "Content-Type": "application/json"}
+        
+        response = http.get(link, headers=headers).json()
+        
+        return response
