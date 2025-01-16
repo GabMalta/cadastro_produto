@@ -1,87 +1,163 @@
 import json
 import os
-import time
 from apps.bling_api.produto import Produto
-from apps.data_scraping.import_images import import_images
+from apps.data_scraping.create_covers import create_covers
 from description.render_template_description import render_template_description
 from apps.price_generator.price_generator import price_generator
-
-# imported_product = import_images('AQUARELA',r'https://aquarelatecidos.com/Tecidos%20Lisos/1465%20-%20Malha%20Jacquard%20Piquet/index.html', 'MALHA PIQUET CASINHA DE ABELHA', r'D:\SITE LEGITIMA TEXTIL\EXTRAIDOS AUTOMATICO\NOVA EXTRACAO')
-path = r'D:\SITE LEGITIMA TEXTIL\EXTRAIDOS AUTOMATICO\NOVA EXTRACAO\TEMP_GM\TULE POA COM GLITER A9983'
-pictures_path = os.path.join(path, 'Fotos')
-capa_path = os.path.join(path, 'Capa')
-
-imported_product = {'path': path, 'pictures_directory': pictures_path, 'cover_directory':capa_path}
-
-with open(os.path.join(imported_product['path'], 'image_urls.json')) as arq:
-    product_json = json.load(arq)
-
-cover_path = imported_product['cover_directory']
-pictures_path = imported_product['pictures_directory']
-
-changed_name = bool(input('tempo para trocar o nome das cores...'))
-
-produto = Produto(
-    cover_path,
-    pictures_path,
-    f'Tecido {product_json['fabric_name'].title()}',
-    product_json['fabric_name'].title(),
-    product_json['cod'],
-    0.00
-)
-
-nome = 'Tecido Tule Poa Com Gliter'#f'Tecido {product_json['fabric_name'].title()}'
-folder_name = product_json['fabric_name'].title()
-largura_tec = product_json['width']
-preco_custo = 7.49
-metragens = [1, 3, 4, 6, 10]
-codigo = product_json['cod']
-preco = [price_generator(preco_custo, mt, 20) for mt in metragens] 
-peso = [0.2, 0.6, 0.8, 1, 1.2]
-largura = [7, 7, 7, 7, 7]
-altura = [7, 7, 7, 10, 10]
-profundidade = [7, 7, 7, 7, 7]
+from functions import *
+import settings
 
 
-    
-anuncios = []
+def main():
 
-with open('./description/desc_gpt.txt', 'r', encoding='utf8') as arq:
-    desc_gpt = arq.read()
+    os.system("cls" if os.name == "nt" else "clear")
 
-for i, mt in enumerate(metragens):
-    
-    composition = product_json['composition']
-    description = render_template_description({'mt': mt, 'larg': largura_tec, 'nome': nome, 'composition': composition, 'desc_gpt': desc_gpt})
-    
-    anuncio = {
-        'titulo': f'{mt} Metros {nome} ({mt}m x {largura_tec}m)',
-        'folder_name': folder_name,
-        'codigo': f'{mt}m-{codigo}',
-        'preco': preco[i],
-        'peso': peso[i],
-        'largura': largura[i],
-        'altura': altura[i],
-        'profundidade': profundidade[i],
-        'description': description
-    }
-    anuncios.append(anuncio)
+    operation_type = input_choices(
+        {"1": "BAIXAR/CADASTRAR", "2": "CADASTRAR", "3": "BAIXAR"},
+        "O QUE DESEJA FAZER?",
+    )
 
-for anuncio in anuncios:
-    produto.name = anuncio['titulo']
-    produto.folder_name = anuncio['folder_name']
-    produto.code = anuncio['codigo']
-    produto.price = anuncio['preco']
-    produto.weight = anuncio['peso']
-    produto.larg = anuncio['largura']
-    produto.alt - anuncio['altura']
-    produto.profun = anuncio['profundidade']
-    produto.description = anuncio['description']
-    
-    product = produto.upload_product(changed_name=changed_name)
-    
-    #id_deposito = 10610809064 #LEGITIMA
-    id_deposito = 14886526196 #GM TECIDOS
-    id_products = [data['id'] for data in product['variations']]
-    
-    produto.add_estoque(id_deposito, id_products, 100)
+    if operation_type == "BAIXAR":
+        return import_images_of_company()
+
+    elif operation_type == "CADASTRAR":
+        imported_product = verify_path_product()
+        my_company = input_choices(
+            settings.MY_COMPANYS, "PARA QUAL EMPRESA SERÁ FEITO O CADASTRO?"
+        )
+
+    elif operation_type == "BAIXAR/CADASTRAR":
+        imported_product = import_images_of_company()
+
+    my_company = input_choices(
+        settings.MY_COMPANYS, "PARA QUAL EMPRESA SERÁ FEITO O CADASTRO?"
+    )
+
+    id_deposito = settings.MY_COMPANY_SETTINGS[my_company]["id_deposito"]
+    letter_color = settings.MY_COMPANY_SETTINGS[my_company]["letter_color"]
+
+    fabric_name = imported_product["fabric_name"]
+    title_ad = input_custom(
+        "DIGITE O TITULO DO ANUNCIO (O ANUNCIO SERA CADASTRADO COM ESSE NOME):"
+    )
+    cost_price = input_number("QUAL O PREÇO DE CUSTO DO TECIDO?")
+    profit_margin = input_number("QUAL A MARGEM DE LUCRO DESEJADA?")
+
+    weight_by_size = input_number("QUAL O PESO POR METRO DO TECIDO?")
+
+    sizes = input_sizes()
+    sizes_and_dimensions = input_dimensions(sizes, weight_by_size)
+
+    cover_path = imported_product["cover_directory"]
+    pictures_path = imported_product["pictures_directory"]
+    path = imported_product["path"]
+
+    while True:
+        create_cover = input_choices(
+            {"1": "SIM", "2": "NÃO"}, "CRIAR CAPA AUTOMÁTICA PARA O ANÚNCIO?"
+        )
+
+        if create_cover == "SIM":
+            create_covers(
+                path,
+                fabric_name,
+                upload_for_s3=True,
+                time_color_change=False,
+            )
+            break
+        else:
+            if os.path.exists(cover_path) and os.listdir(cover_path):
+                break
+            else:
+                os.system("cls" if os.name == "nt" else "clear")
+                print(
+                    "A PASTA CAPA NÃO EXISTE OU NÃO CONTEM NENHUM CONTEÚDO, CRIE A PASTA CAPA E ADICIONE AS FOTOS DE CAPA OU PEÇA AO SISTEMA PARA CRIAR AUTOMATICAMENTE."
+                )
+
+    with open(
+        os.path.join(imported_product["path"], "product_data.json"), encoding="utf-8"
+    ) as arq:
+        product_json = json.load(arq)
+
+    changed_name = (
+        True
+        if input_choices(
+            {"S": "SIM", "N": "NÃO"}, "O NOME DAS CORES SERÃO OU FORAM ALTERADOS?"
+        )
+        == "SIM"
+        else False
+    )
+    desc_gpt = (
+        True
+        if input_choices(
+            {"S": "SIM", "N": "NÃO"},
+            "DESEJA ADICIONAR UMA DESCRIÇÃO CRIADA PELO CHAT GPT?",
+        )
+        == "SIM"
+        else False
+    )
+
+    produto = Produto(
+        cover_path,
+        pictures_path,
+        f"Tecido {product_json['fabric_name'].title()}",
+        product_json["fabric_name"].title(),
+        product_json["cod"],
+        0.00,
+    )
+
+    nome = title_ad if title_ad else f"Tecido {product_json['fabric_name'].title()}"
+
+    estoque_padrao = input_number(
+        "QUAL A QUANTIDADE ESTOQUE SERÁ CADASTRADO PARA AS VARIAÇÕES?"
+    )
+
+    for info in sizes_and_dimensions:
+        info["size"] = int(info["size"]) if info["size"].is_integer() else info["size"]
+
+        description = render_template_description(
+            {
+                "mt": info["size"],
+                "larg": product_json["width"],
+                "nome": nome,
+                "composition": product_json["composition"],
+            },
+            desc_gpt=desc_gpt,
+        )
+
+        produto.name = (
+            f"{info['size']} Metros {nome} ({info['size']}m x {product_json["width"]}m)"
+        )
+        produto.folder_name = product_json["fabric_name"].title()
+        produto.code = f'{info['size']}m-{product_json["cod"]}'
+        produto.price = price_generator(cost_price, info["size"], profit_margin, tax=5)
+        produto.weight = info["weight"]
+        produto.larg = info["width"]
+        produto.alt - info["height"]
+        produto.profun = info["profundidade"]
+        produto.description = description
+        produto.composition = product_json["composition"]
+        produto.fabric_width = product_json["width"]
+
+        product = produto.upload_product(changed_name=changed_name)
+
+        id_products = [data["id"] for data in product["variations"]]
+
+        produto.add_estoque(id_deposito, id_products, estoque_padrao)
+
+        for arq in os.listdir(cover_path):
+            path = os.path.join(cover_path, arq)
+            if os.path.isfile(path):
+                os.remove(path)
+        
+        create_covers(
+                path,
+                fabric_name,
+                upload_for_s3=True,
+                time_color_change=False,
+                create_img_info=True,
+            )
+
+
+if __name__ == "__main__":
+    main()

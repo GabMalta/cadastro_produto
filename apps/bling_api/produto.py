@@ -1,10 +1,10 @@
 import json, re, requests, os
+from apps.amazon_s3.upload_s3 import upload_folder_to_s3_parallel, path_is_image
 from apps.price_generator.price_generator import price_generator
 from apps.bling_api.bling import BlingApi
 from apps.bling_api import settings
 from IMGUR.imgur import Imgur
 from requests_policy.http import http
-
 
 
 class Produto(BlingApi):
@@ -26,7 +26,7 @@ class Produto(BlingApi):
         profun=7,
         marca="Legítima Têxtil",
         two_variations=False,
-        price_cost = None,
+        price_cost=None,
         *args,
         **kwargs,
     ):
@@ -59,72 +59,25 @@ class Produto(BlingApi):
 
         super().__init__(*args, **kwargs)
 
-        self.generate_client_imgur()
-
-    def generate_client_imgur(self):
-        client_id = self.get_client_id_imgur()
-        client_secret = self.get_client_secret_imgur()
-
-        if not client_id or not client_secret:
-            print(
-                """Para cadastrar produtos precisamos hospedar imagens na web, para isso utilizamos o serviço do imgur.
-                  Cadastre um aplicativo e digite o client_id e client_secret abaixo:"""
-            )
-
-            client_id = input("Digite ou cole o client_id: ")
-            client_secret = input("Digite ou cole o client_secret: ")
-
-            self.set_client_id_imgur(client_id)
-            self.set_client_secret_imgur(client_secret)
-
-        self.imgur = Imgur(client_id, client_secret)
-
-    def get_client_id_imgur(self) -> str:
-        with open(
-            os.path.join(settings.PATH_SRC, "tokens/client_id_imgur.txt"), "r"
-        ) as token:
-            return token.read()
-
-    def get_client_secret_imgur(self) -> str:
-        with open(
-            os.path.join(settings.PATH_SRC, "tokens/client_secret_imgur.txt"), "r"
-        ) as token:
-            return token.read()
-
-    def set_client_id_imgur(self, client_id: str):
-        with open(
-            os.path.join(settings.PATH_SRC, "tokens/client_id_imgur.txt"), "w"
-        ) as token:
-            token.write(client_id)
-
-    def set_client_secret_imgur(self, client_secret: str):
-        with open(
-            os.path.join(settings.PATH_SRC, "tokens/client_secret_imgur.txt"), "w"
-        ) as token:
-            token.write(client_secret)
-
-    def get_upload_cover(self, album_id=None):
+    def get_upload_cover(self):
 
         if "image_urls.json" in os.listdir(self.cover_path):
             img_json = self.get_image_json(
                 os.path.join(self.cover_path, "image_urls.json")
             )
-            images_url = [{"link": img["url"]} for img in img_json]
+            images_url = [{"link": img[1]["img"]} for img in img_json.items()]
+            
+            self.covers_urls = images_url
 
         else:
-            images = self.imgur.upload_images(self.cover_path, album_id=album_id)[
-                "data"
-            ]
+            s3_folder = f"{self.folder_name}/Capa"
 
-            for image in images:
-                self.save_image_json(self.cover_path, image)
+            upload_folder_to_s3_parallel(self.cover_path, s3_folder)
 
-            images_url = [{"link": img["link"]} for img in images]
-        print("fiiim")
-        self.covers_urls = images_url
+            self.get_upload_cover()
 
     def compose_product(self, changed_name=True):
-        variations = (
+        self.variations = (
             self.compose_variations(changed_name)
             if not self.two_variations
             else self.compose_two_variations(changed_name)
@@ -143,8 +96,8 @@ class Produto(BlingApi):
         product["dimensoes"]["profundidade"] = self.profun
         product["tributacao"]["origem"] = self.origin
         product["tributacao"]["ncm"] = self.ncm
-        product["midia"]["imagens"] = {"externas": self.covers_urls}
-        product["variacoes"] = variations
+        product["midia"]["imagens"] = {"imagensURL": self.covers_urls}
+        product["variacoes"] = self.variations
         product["camposCustomizados"][7]["valor"] = self.composition
         product["camposCustomizados"][8]["valor"] = self.fabric_width
         product["camposCustomizados"][11]["valor"] = self.code
@@ -160,14 +113,13 @@ class Produto(BlingApi):
         for color in folder:
             path_color = os.path.join(self.path_variations, color)
 
-            if "desktop.ini" in color or not self.imgur.path_is_image(path_color):
+            if "desktop.ini" in color or not path_is_image(path_color):
                 continue
 
             color_name, cod_sku = self.generate_colorname_and_codsku(
                 color, changed_name
             )
             image_url = ""
-            album_id = ""
 
             if "image_urls.json" in folder:
                 img_json = self.get_image_json(
@@ -175,21 +127,10 @@ class Produto(BlingApi):
                 )
 
                 if img_json:
-                    for img in img_json:
-                        if img.get("color") == color_name:
-                            image_url = img.get("url")
+                    for img in img_json.items():
+                        if img[0] == color_name:
+                            image_url = img[1]["img"]
                             break
-            if not image_url:
-
-                album_id = self.check_exists_album_title(self.folder_name)
-
-                if not album_id:
-                    album_id = self.imgur.create_album(self.folder_name)["id"]
-
-                image = self.imgur.upload_image(path_color, album_id)
-                self.save_image_json(self.path_variations, image)
-
-                image_url = image["link"]
 
             variation = self.get_variation_json()
 
@@ -204,13 +145,13 @@ class Produto(BlingApi):
             variation["dimensoes"]["profundidade"] = self.profun
             variation["tributacao"]["origem"] = self.origin
             variation["tributacao"]["ncm"] = self.ncm
-            variation["midia"]["imagens"]["externas"] = [{"link": image_url}]
+            variation["midia"]["imagens"]["imagensURL"] = [{"link": image_url}]
 
             variations.append(variation)
 
-        self.variations = variations
-        self.get_upload_cover(album_id)
+        self.get_upload_cover()
 
+        self.variations = variations
         return variations
 
     def compose_two_variations(self, changed_name=True):
@@ -257,8 +198,8 @@ class Produto(BlingApi):
                 variation = self.get_variation_json()
 
                 variate = str(secont_variate)
-                
-                multiplier = float(variate.replace(',', '.'))
+
+                multiplier = float(variate.replace(",", "."))
 
                 variation["nomeVariacao"] = f"Cor:{color_name};Tamanho:{variate}m"
                 variation["codigo"] = f"{self.code}-{variate}m-{cod_sku}"
@@ -405,15 +346,14 @@ class Produto(BlingApi):
 
             if response.status_code == 201:
                 print("Lançamento de estoque: OK")
-                
-    def edit_product(self,id_product, payload):
+
+    def edit_product(self, id_product, payload):
         link = f"https://www.bling.com.br/Api/v3/produtos/{id_product}"
 
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
         }
-        
 
         body_message = json.dumps(payload)
 
@@ -422,9 +362,9 @@ class Produto(BlingApi):
             print(f"Produto {self.name} editado com sucesso. {response.status_code}")
             response = response.json()
 
-            data = {'status': 200}
+            data = {"status": 200}
 
             return data
-        
+
         except requests.exceptions.HTTPError as err:
             print(err.response.json())

@@ -1,0 +1,15 @@
+<h1>PROMOÇÃO</h1>
+<h3 style="text-align: center;"><span style="text-decoration-line: underline;"><span><span style="vertical-align: inherit;"></span></span></span></h3>
+<h3 style="text-align: center;"><span style="text-decoration-line: underline;"><span>Informações do Tecido</span></span></h3>
+<p style="text-align: center;"><strong>{{nome}}</strong></p>
+<p style="text-align: center;"><strong>Composição: {{composition}}</strong></p>
+<p style="text-align: center;"><strong>Largura : {{larg}} Metros</strong></p>
+
+{% if desc_gpt %}
+<h2 style="text-align: center;"><span style="text-decoration-line: underline;">Promoção {{nome}}</span></h2>
+<pre style="text-align: center;">
+    {{desc_gpt}}
+</pre>
+
+
+{% endif %}

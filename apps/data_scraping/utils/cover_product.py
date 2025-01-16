@@ -1,88 +1,205 @@
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, UnidentifiedImageError
 import os, random
 
-class CoverPicture():
-    
-    def __init__(self, path_pictures:str, path_cover:str, size_cover:tuple=(1280,1280)):
-        self.path_pictures = path_pictures
-        self.path_cover = path_cover
-        self.size_cover = size_cover
-        
-        if not os.path.exists(self.path_cover):
-            os.mkdir(self.path_cover)
-            
-    def get_pictures(self):
-        pictures = []
-        for picture in os.listdir(self.path_pictures):
-            if 'desktop.ini' in picture or '.json' in picture:
-                continue
-            
-            pictures.append(os.path.join(self.path_pictures, picture))
-        return pictures
-            
-    def get_len_path_pictures(self):
-        self.len_path_pictures = len(os.listdir(self.path_pictures))
-        return self.len_path_pictures
-    
-    def get_size_images(self, cover_width, cover_height, number_of_images):
-        width = int((cover_width - 10) / (number_of_images / 2))
-        height = int((cover_height - 10) / (number_of_images / 2))
-        return (width, height)
-        
-    
-    def set_size_images(self, number_of_images):
-        
-        if number_of_images > self.get_len_path_pictures():
-            print('Número de imagens definido é maior que o número de imagens na pasta, será usado o número de imagens na pasta')
-            number_of_images = self.len_path_pictures
-        
-        image_sizes = self.get_size_images(*self.size_cover, number_of_images)
-        
-        return image_sizes
-    
-    def compose_cover(self, name_saved, cover_title=None, number_of_images=4, max_letters=16, letter_color='#5DC1B9', font_color='#050A30'):
-        
-        images_size = self.set_size_images(number_of_images)
-        positions = [(0,0), (640,0), (0,640), (640,640)]
-        pictures = self.get_pictures()
-        pictures_random = random.sample(pictures, 4 if len(pictures) > 4 else len(pictures))
-        background = Image.new('RGB', self.size_cover)
-        
-        for i, picture in enumerate(pictures_random):
-            img = Image.open(picture).resize(images_size)
-            background.paste(img, positions[i])
-        
-        if cover_title:
-            self.write_cover_title(name_saved, cover_title, background, max_letters, letter_color, font_color)
-        else:
-            background.save(os.path.join(self.path_cover, f'{name_saved}.jpg'))
-    
-    def write_cover_title(self, name_saved, cover_title:str, background_image: Image.Image | str, max_letters=16, letter_color='#5DC1B9', font_color='#050A30'):
-        if type(background_image) != Image.Image:
-            background_image = Image.open(background_image)
-        
-        draw = ImageDraw.Draw(background_image)
-        font = ImageFont.truetype("impact.ttf",size=110)
-        
-        draw.rectangle((200,490,1067,795), fill=letter_color, outline= '#0000') # -> LEGITIMA
-        draw.text((640, 640),cover_title, fill=font_color, font=font, align='center', stroke_fill='white', stroke_width=3, anchor='mm',)
-        
-        background_image.save(os.path.join(self.path_cover, f'{name_saved}.jpg'))
-    
-    def line_break(self, title, max_letters=16):
 
-        title = title.split()
+class CoverProduct:
+    
+
+    def __init__(self, path, size_cover: int | float = 1280):
         
-        i = 0
-        ln1 = ''
-        while True:
-            ln1 = f'{ln1} {title[i]}'
+        if not isinstance(size_cover, (int,float)):
+            raise ValueError("O Parametro size_cover deve ser um int ou float")
+        
+        self.path = path
+        self.size_cover = self.int_round(size_cover)
+
+    def set_paths_cover(self):
+        self.path_images = os.path.join(self.path, "Fotos")
+        self.path_save = os.path.join(self.path, "Capa")
+
+        self.images = os.listdir(self.path_images)
+      
+        if 'desktop.ini' in self.images:
+            self.images.remove('desktop.ini')
             
-            if len(ln1) < max_letters:
-                if (len(ln1) + len(title[i+1]) > 16):
-                    ln2 = f'{' '.join(title[i+1:])}'
-                    title = f'{ln1}\n{ln2}'
-                    return title
-            i+=1
+        for img in self.images:
+            try:
+                with Image.open(os.path.join(self.path_images, img)) as image:
+                    image.verify()
+            except (UnidentifiedImageError, FileNotFoundError):
+                self.images.remove(img)
+        
+        self.len_path_images = len(self.images)
 
+        if not os.path.exists(self.path_save):
+            os.mkdir(self.path_save)
 
+    def new_background(self, color=(255, 255, 255)):
+        return Image.new("RGB", (self.size_cover, self.size_cover), color)
+    
+    def int_round(self, value):
+        return int(round(value))
+    
+    def percent_of_size(self, percent):
+        return self.int_round(self.size_cover * percent)
+
+    def cover_grid(self, name_save):
+
+        self.set_paths_cover()
+        
+        if self.len_path_images < 9:
+            return print(
+                "\nERROR: A PASTA FOTOS DEVE TER PELO MENOS 9 IMAGENS PARA SE CRIAR ESSE TIPO DE CAPA"
+            )
+        background = self.new_background()
+
+        resize_value = self.percent_of_size(0.32421875)
+        position_1 = 0
+        position_2 = self.percent_of_size(0.33828125)
+        position_3 = self.percent_of_size(0.67578125)
+
+        positions_coord = [position_1, position_2, position_3]
+
+        positions = [(x, y) for x in positions_coord for y in positions_coord]
+
+        images = random.sample(self.images, 9)
+            
+        for i, picture in enumerate(images):
+
+            path_img = os.path.join(self.path_images, picture)
+
+            img_mask = Image.open(path_img).resize((resize_value, resize_value))
+
+            background.paste(img_mask, positions[i])
+
+            if i == 8:
+                break
+
+        cover_save = os.path.join(self.path_save, f'{name_save}.jpg')
+        
+        background.save(cover_save)
+        return cover_save
+
+    def cover_three(self, name_save):
+        self.set_paths_cover()
+
+        if self.len_path_images < 3:
+            return print(
+                "\nERROR: A PASTA FOTOS DEVE TER PELO MENOS 3 IMAGENS PARA SE CRIAR ESSE TIPO DE CAPA"
+            )
+
+        background = self.new_background()
+        
+
+        images = random.sample(self.images, 3)
+        
+        for i,img in enumerate(images):
+            
+            image = Image.open(os.path.join(self.path_images, img))
+            
+            size = self.percent_of_size(0.49296875)
+            position = self.percent_of_size(0.50703125)
+            
+            match i:
+                case 0:
+                    props = {'resize': (size, self.size_cover), 'positions': (0, 0)}
+                case 1:
+                    props = {'resize': (size,size), 'positions': (position, position)}
+                case 2:
+                    props = {'resize': (size,size), 'positions': (position, 0)}
+                
+            
+            image = image.resize(props['resize'])
+            background.paste(image, props['positions'])
+        
+        cover_save = os.path.join(self.path_save, f'{name_save}.jpg')
+        
+        background.save(cover_save)
+        return cover_save
+            
+    def cover_grid_2(self, name_save):
+        self.set_paths_cover()
+
+        if self.len_path_images < 5:
+            return print(
+                "\nERROR: A PASTA FOTOS DEVE TER PELO MENOS 3 IMAGENS PARA SE CRIAR ESSE TIPO DE CAPA"
+            )
+
+        background = self.new_background()
+        
+
+        images = random.sample(self.images, 5)
+        
+        for i,img in enumerate(images):
+            
+            image = Image.open(os.path.join(self.path_images, img))
+            
+            size_rectangle_h = (self.percent_of_size(0.7), self.percent_of_size(0.29375))
+            size_rectangle_v = (self.percent_of_size(0.29375), self.percent_of_size(0.7))
+            size_square = self.percent_of_size(0.4)
+            size_square = (size_square, size_square)
+            
+            match i:
+                case 0:
+                    props = {"resize": size_rectangle_h, "positions": (0, 0)}
+                case 1:
+                    props = {"resize": size_rectangle_v, "positions": (0, self.percent_of_size(0.3))}
+                case 2:
+                    props = {"resize": size_rectangle_h, "positions": (self.percent_of_size(0.3), self.percent_of_size(0.70625))}
+                case 3:
+                    props = {"resize": size_rectangle_v, "positions": (self.percent_of_size(0.70625), 0)}
+                case 4:
+                    props = {"resize": size_square, "positions": (self.percent_of_size(0.3), self.percent_of_size(0.3))}
+            
+            image = image.resize(props['resize'])
+            background.paste(image, props['positions'])
+            
+        
+        cover_save = os.path.join(self.path_save, f'{name_save}.jpg')
+        
+        background.save(cover_save)
+        return cover_save
+    
+    def cover_grid_3(self, name_save):
+        self.set_paths_cover()
+
+        if self.len_path_images < 6:
+            return print(
+                "\nERROR: A PASTA FOTOS DEVE TER PELO MENOS 6 IMAGENS PARA SE CRIAR ESSE TIPO DE CAPA"
+            )
+
+        background = self.new_background()
+        
+
+        images = random.sample(self.images, 6)
+        
+        for i,img in enumerate(images):
+            image = Image.open(os.path.join(self.path_images, img))
+            
+            size_rectangle_v = (self.percent_of_size(0.2453125), self.percent_of_size(0.32265625))
+            size_rectangle_h = (self.percent_of_size(0.4984375), self.percent_of_size(0.32265625))
+            size_square = self.percent_of_size(0.4921875)
+            size_square = (size_square, size_square)
+            
+            match i:
+                case 0:
+                    props = {'resize': size_rectangle_h, "positions": (0,0)}
+                case 1:
+                    props = {'resize': size_rectangle_h, "positions": (0,self.percent_of_size(0.67734375))}
+                case 2:
+                    props = {'resize': size_rectangle_v, "positions": (0,self.percent_of_size(0.3390625))}
+                case 3:
+                    props = {'resize': size_rectangle_v, "positions": (self.percent_of_size(0.253125),self.percent_of_size(0.3390625))}
+                case 4:
+                    props = {'resize': size_square, "positions": (self.percent_of_size(0.5078125),0)}
+                case 5:
+                    props = {'resize': size_square, "positions": (self.percent_of_size(0.5078125),self.percent_of_size(0.5078125))}
+
+            image = image.resize(props['resize'])
+            
+            background.paste(image, props['positions'])
+        
+        cover_save = os.path.join(self.path_save, f'{name_save}.jpg')
+        
+        background.save(cover_save)
+        return cover_save

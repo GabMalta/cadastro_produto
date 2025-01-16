@@ -27,4 +27,3 @@ def rounded_number(value) -> float:
         return integer_part + first_decimal - 0.01
     else:
         return integer_part + first_decimal + 0.09
-    
