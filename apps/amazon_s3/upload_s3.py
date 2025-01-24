@@ -6,8 +6,6 @@ from PIL import Image
 
 # Configurações da AWS
 
-BUCKET_NAME = "legitimatextil"
-
 # Inicializar cliente S3
 s3 = boto3.client(
     "s3", aws_access_key_id=AWS_ACCESS_TOKEN, aws_secret_access_key=AWS_SECRET_TOKEN
