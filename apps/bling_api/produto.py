@@ -14,6 +14,7 @@ class Produto(BlingApi):
         path_variations,
         name,
         folder_name,
+        quantidade,
         code,
         price,
         description="",
@@ -35,6 +36,7 @@ class Produto(BlingApi):
         self.path_variations = path_variations
         self.name = name
         self.folder_name = folder_name
+        self.quantidade = quantidade
         self.code = code
         self.price = price
         self.description = description
@@ -98,6 +100,7 @@ class Produto(BlingApi):
         product["tributacao"]["ncm"] = self.ncm
         product["midia"]["imagens"] = {"imagensURL": self.covers_urls}
         product["variacoes"] = self.variations
+        product["camposCustomizados"][3]["valor"] = self.quantidade
         product["camposCustomizados"][7]["valor"] = self.composition
         product["camposCustomizados"][8]["valor"] = self.fabric_width
         product["camposCustomizados"][11]["valor"] = self.code
@@ -335,7 +338,7 @@ class Produto(BlingApi):
         # deposito1 = 14886526196
 
         estoque_json = self.get_estoque_json()
-        for id_product in id_products:
+        for i,id_product in enumerate(id_products, start=1):
             estoque_json["produto"]["id"] = id_product
             estoque_json["deposito"]["id"] = id_deposito
             estoque_json["quantidade"] = qtd
@@ -345,7 +348,7 @@ class Produto(BlingApi):
             response = http.post(link, headers=headers, data=body_message)
 
             if response.status_code == 201:
-                print("Lançamento de estoque: OK")
+                print(f"Lançamento de estoque: OK {i}")
 
     def edit_product(self, id_product, payload):
         link = f"https://www.bling.com.br/Api/v3/produtos/{id_product}"

@@ -1,11 +1,39 @@
-# from apps.data_scraping.create_covers import create_covers
+import json
+import os
+import random
+from apps.data_scraping.create_covers import create_covers
 
+names = [
+    ("CETIM COM LYCRA P019", "CETIM COM LYCRA", [3,4,5,6,7,10]),
+    ("CETIM DECORACAO 3M LARGURA A28", "CETIM DECORAÇÃO 3M DE LARGURA", [3,4,6,10]),
+    ("CETIM ESTAMPADO L02", "CETIM ESTAMPADO", [3,4,5,6,7,10,15]),
+    ("CHITAO 100% ALGODAO A18", "CHITÃO 100% ALGOGÃO", [3,6,7,10]),
+    
+]
 
-# create_covers(6, "TULE COM LYCRA ESTAMPADO", r'D:\SITE LEGITIMA TEXTIL\CATÁLOGO DIGITAL\TULE COM LYCRA ESTAMPADO P243', letter_color="#ff2d00", font_color="#f5e1eb", company="GM", upload_for_s3=True, name_archive="CAPA_GM")
+def excluir_arq_pasta(path):
+    for arq in os.listdir(os.path.join(path, 'Capa')):
+        path_remove = os.path.join(path,'Capa', arq)
+        if os.path.isfile(path_remove):
+            os.remove(path_remove)
 
+for name in names:
+    path_name, title, mt = name
+    path = os.path.join("D:\SITE LEGITIMA TEXTIL\CATÁLOGO DIGITAL", path_name)
 
-lista = ['01.jpg', '100.jpeg', '101.jpeg', '102.jpeg', '103.jpeg', '104.jpeg', '107.jpeg', '108.jpeg', '109.jpeg', '111.jpeg', '112.jpeg', '113.jpeg', '114.jpeg', '115.jpeg', '117.jpeg', '119.jpeg', '121.jpg', '122.jpg', '123.jpg', '124.jpg', '125.jpg', '126.jpg', '127.jpg', '128.jpg', '129.jpg', '13.jpg', '130.jpg', '131.jpg', '132.jpg', '133.jpg', '134.jpg', '135.jpg', '136.jpg', '137.jpg', '138.jpg', '139.jpg', '140.jpg', '141.jpg', 
-'142.jpg', '143.jpg', '144.jpg', '17.jpg', '23.jpg', '24.jpg', '25.jpg', '27.jpg', '28.jpg', '29.jpg', '30.jpg', '31.jpg', '33.jpg', '34.jpg', '41.jpg', '42.jpg', '44.jpg', '46.jpeg', '47.jpeg', '48.jpeg', '50.jpeg', '51.jpeg', '54.jpeg', '55.jpeg', '56.jpeg', '58.jpeg', '59.jpeg', '63.jpeg', '64.jpeg', '65.jpeg', '67.jpeg', '69.jpeg', '71.jpeg', '72.jpeg', '73.jpeg', '74.jpeg', '75.jpeg', '76.jpeg', '77.jpeg', '78.jpeg', '79.jpeg', '80.jpeg', '81.jpeg', '82.jpeg', '83.jpeg', '87.jpeg', '88.jpeg', '89.jpeg', '92.jpeg', '93.jpeg', '94.jpeg', '95.jpeg', '96.jpeg', '97.jpeg', '98.jpeg', '99.jpeg', 'desktop.ini']
+    excluir_arq_pasta(path)
+    
+    for i, m in enumerate(mt, start=1):
+    
+        create_covers(os.path.join("D:\SITE LEGITIMA TEXTIL\CATÁLOGO DIGITAL", path), title, upload_for_s3=True, time_color_change=False, company="GM", font_color="#000", stroke_fill="orange", name_saved=f'CAPA ({m}m {i+1})')
+        
+        
+        with open(os.path.join(path, "Capa", 'image_urls.json'),'r', encoding='utf-8') as arq:
+            links = json.load(arq)
 
-print(lista.remove('desktop.ins i'))
-print(lista)
+        text = "|".join([value['img'] for key,value in links.items()])
+
+        with open(rf'D:\SITE LEGITIMA TEXTIL\CATÁLOGO DIGITAL\1 LINKS GM\{path_name}.txt', 'a') as arq:
+            arq.write(f'\n{m} METROS\n{text}\n')
+        
+        excluir_arq_pasta(path)

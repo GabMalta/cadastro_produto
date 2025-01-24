@@ -1,10 +1,7 @@
 from concurrent.futures import ThreadPoolExecutor
 import os
 
-from apps.data_scraping.sites_scraping.disparada import (
-    disparada_scraping,
-    disparada_requests,
-)
+from apps.data_scraping.sites_scraping.requests_site import site_request
 from apps.data_scraping.sites_scraping.pitangui import pitangui_scraping
 from apps.data_scraping.sites_scraping.aquarela import aquarela_scraping
 from apps.data_scraping.utils.create_save_directory import create_save_directory
@@ -23,11 +20,13 @@ def import_images(
         try:
             match company.upper():
                 case "DISPARADA":
-                    product = disparada_requests(cod_or_url, fabric_name)
+                    product = site_request(cod_or_url, fabric_name, company.upper())
                 case "PITANGUI":
                     product = pitangui_scraping(cod_or_url, fabric_name)
                 case "AQUARELA":
                     product = aquarela_scraping(cod_or_url, fabric_name)
+                case "JANON":
+                    product = site_request(cod_or_url, fabric_name, company.upper())
                 case _:
                     raise ValueError("ATACADO INVÁLIDO")
         except Exception as e:

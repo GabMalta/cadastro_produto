@@ -10,14 +10,6 @@ def disparada_scraping(cod, fabric_name):
     nav = create_webdriver()
 
     folder_name = f"{fabric_name} D{cod}"
-    save_path = rf"D:\SITE LEGITIMA TEXTIL\EXTRAIDOS AUTOMATICO\DISPARADA\{folder_name}"
-
-    # nav.get(f'https://disparadatecidos.com.br/')
-    # nav.find_element('xpath', '/html/body/main/a[1]').click()
-
-    # nav.find_element('xpath', '//*[@id="input_search"]').send_keys(cod)
-    # nav.find_element('xpath', '//*[@id="input_search"]').send_keys(Keys.ENTER)
-    # nav.find_element('xpath', '//*[@id="artigo-list"]/li/a').click()
 
     nav.get(f"https://disparadatecidos.com.br/artigo/{cod}")
 
@@ -61,39 +53,4 @@ def disparada_scraping(cod, fabric_name):
     }
     nav.close()
 
-    return response
-
-
-def disparada_requests(cod, fabric_name):
-
-    data = requests.get(
-        f"https://disparadatecidos.com.br/api/get_data_for_artigo_view/{cod}"
-    )
-
-    response = data.json()
-
-    if response["error"] == True:
-        raise ValueError(response["message"])
-
-    response = response["data"]['artigo']
-
-    urls = [
-        {
-            "name": cor["codigo"],
-            "url_img": rf'https://sistema.disparadatecidos.com.br/upload_artigo_images/{cor["image_path"]}',
-            "format": cor["image_path"].split(".")[-1],
-        }
-        for cor in response["cores"]
-    ]
-
-
-    response = {
-        "fabric_name": fabric_name,
-        "cod": f"D{cod}",
-        "folder_name": f"{fabric_name} D{cod}",
-        "composition": response["composicao"],
-        "width": response["largura"],
-        "pictures": urls,
-    }
-    
     return response

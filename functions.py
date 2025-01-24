@@ -171,6 +171,9 @@ def verify_path_product():
             "width": width,
         }
 
+        with open(os.path.join(path, "product_data.json"), "w", encoding="utf-8") as arq:
+            json.dump(data, arq, ensure_ascii=False, indent=4)
+    
     with open(os.path.join(path, "product_data.json"), encoding="utf-8") as arq:
         data = json.load(arq)
 
@@ -212,11 +215,11 @@ def import_images_of_company():
             }
             return imported_product | user_inputs
         except Exception as e:
-            os.system("cls" if os.name == "nt" else "clear")
+            #os.system("cls" if os.name == "nt" else "clear")
             print("\n", e)
             print("\nINFORME NOVAMENTE AS INFORMAÇÕES")
 
-            if "ATACADO INVÁLIDO" in e:
+            if "ATACADO INVÁLIDO" in str(e):
                 company = input_choices(
                     settings.COMPANYS, "EM QUAL ATACADO SERÁ FEITA A EXTRAÇÃO DE FOTOS?"
                 )

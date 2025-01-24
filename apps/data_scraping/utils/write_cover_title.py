@@ -9,7 +9,7 @@ def write_cover_title(
     path_font=None,
     font_size=None,
     stroke_fill=None,
-    stroke_width=None,
+    stroke_width=0,
 ):
     def percent_of_size(size, percent):
         return int(round(size * percent))

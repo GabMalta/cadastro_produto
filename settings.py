@@ -5,4 +5,4 @@ MY_COMPANY_SETTINGS = {
     "GM TECIDOS": {"id_deposito": 14886526196, "letter_color": "#FFA500"},
 }
 
-COMPANYS = {"1": "DISPARADA", "2": "AQUARELA", "3": "PITANGUI"}
+COMPANYS = {"1": "DISPARADA", "2": "AQUARELA", "3": "PITANGUI", "4": "JANON"}

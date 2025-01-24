@@ -112,4 +112,4 @@ def image_info(
     text_image = text_image.rotate(90, expand=True)
     img.paste(text_image, larg1_props["position"], text_image)
 
-    img.save(os.path.join(path_save, f"CAPA_INFO_{company.upper()}.jpg"))
+    img.save(os.path.join(path_save, f"CAPA INFO {company.upper()}.jpg"))
