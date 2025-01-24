@@ -5,12 +5,13 @@ from PIL import Image
 
 
 # Configurações da AWS
-A_A_T = "AKIA4VDBMCPWMWUNC2SM"
-A_S_T = "tmlHv4Sr1Mwn0SDn0p3Vu9KAQR0lDxdhQtdA+gJb"
+
 BUCKET_NAME = "legitimatextil"
 
 # Inicializar cliente S3
-s3 = boto3.client("s3", aws_access_key_id=A_A_T, aws_secret_access_key=A_S_T)
+s3 = boto3.client(
+    "s3", aws_access_key_id=AWS_ACCESS_TOKEN, aws_secret_access_key=AWS_SECRET_TOKEN
+)
 
 
 def upload_file(local_path, s3_key):
