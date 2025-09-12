@@ -19,7 +19,7 @@ def write_cover_title(
     draw = ImageDraw.Draw(image)
 
     if not path_font:
-        path_font = r"C:\Users\gabri\OneDrive\Área de Trabalho\PROGRAMACAO\PYTHON\cadastra_produto_bling\apps\data_scraping\utils\fonts\SIFONN_PRO.otf"
+        path_font = r"C:\Users\gabri\www\cadastro_produto\apps\data_scraping\utils\fonts\SIFONN_PRO.otf"
 
     if not font_size:
         font_size = percent_of_size(width, 0.07)

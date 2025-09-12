@@ -2,7 +2,7 @@ from jinja2 import Environment, FileSystemLoader
 
 
 def render_template_description(data: dict, promo=False):
-    path = r"C:\Users\gabri\OneDrive\Área de Trabalho\PROGRAMACAO\PYTHON\cadastra_produto_bling\description"
+    path = r"C:\Users\gabri\www\cadastro_produto\description"
     # Carrega os templates do diretório atual
     file_loader = FileSystemLoader(path)
     env = Environment(loader=file_loader)

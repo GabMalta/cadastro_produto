@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from apps.data_scraping.utils.selenium_webdriver import create_webdriver
 
-def pitangui_scraping(cod, fabric_name):
+def pitangui_scraping(cod, fabric_name, company:dict):
     nav = create_webdriver()
     
     nav.get('https://pitanguitecidos.com/')
@@ -46,6 +46,8 @@ def pitangui_scraping(cod, fabric_name):
         'folder_name': folder_name,
         'composition': composition,
         'width': width,
+        "fornecedor": company["name"],
+        'id_fornecedor': company['id_fornecedor'],
         'pictures': urls
     }
     

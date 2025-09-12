@@ -8,6 +8,7 @@ from apps.data_scraping.utils.create_save_directory import create_save_directory
 from apps.data_scraping.utils.download_picture import download_picture
 from apps.data_scraping.utils.save_product_json import save_product_json
 from apps.amazon_s3.upload_s3 import upload_folder_to_s3_parallel
+
 import settings
 
 
@@ -18,15 +19,21 @@ def import_images(
 
     while True:
         try:
-            match company.upper():
+            match company['name'].upper():
                 case "DISPARADA":
-                    product = site_request(cod_or_url, fabric_name, company.upper())
+                    product = site_request(cod_or_url, fabric_name, company)
                 case "PITANGUI":
-                    product = pitangui_scraping(cod_or_url, fabric_name)
+                    product = pitangui_scraping(cod_or_url, fabric_name, company)
                 case "AQUARELA":
-                    product = aquarela_scraping(cod_or_url, fabric_name)
+                    product = aquarela_scraping(cod_or_url, fabric_name, company)
                 case "JANON":
-                    product = site_request(cod_or_url, fabric_name, company.upper())
+                    product = site_request(cod_or_url, fabric_name, company)
+                case "JR ANDRADE":
+                    product = site_request(cod_or_url, fabric_name, company)
+                case "CHARMY":
+                    product = site_request(cod_or_url, fabric_name, company)
+                case "ACTUAL":
+                    product = site_request(cod_or_url, fabric_name, company)
                 case _:
                     raise ValueError("ATACADO INVÁLIDO")
         except Exception as e:
@@ -34,6 +41,10 @@ def import_images(
             raise ValueError(e)
 
         save_path = create_save_directory(path, product["folder_name"])
+        
+        from functions import input_number
+
+        product["price_cost_bruto"] = input_number("INFORME O PREÇO DE CUSTO BRUTO POR METRO DO PRODUTO:")
 
         save_product_json(save_path, product)
 
@@ -49,18 +60,8 @@ def import_images(
                 for arq in product["pictures"]
             ]
             executor.map(lambda args: download_picture(*args), files_to_download)
-
-        add_images = input_choices(
-            {"1": "SIM", "2": "NÃO"}, "DESEJA ADICIONAR MAIS IMAGENS DE OUTRO ATACADO?"
-        )
-        if add_images == "NÃO":
-            break
-
-        company = input_choices(
-            settings.COMPANYS, "EM QUAL ATACADO SERÁ FEITA A EXTRAÇÃO DE FOTOS?"
-        )
-        from functions import input_cod
-        cod_or_url = input_cod(company)
+            
+        break
 
     if upload_for_s3:
         input(

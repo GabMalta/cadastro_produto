@@ -7,7 +7,7 @@ from apps.data_scraping.utils.save_product_json import save_product_json
 import settings
 
 
-def input_choices(choices: dict, question: str) -> str:
+def input_choices(choices: dict, question: str) -> str | dict:
 
     input_choices = "\n".join([f"{key} - {value}" for key, value in choices.items()])
 
@@ -46,7 +46,7 @@ def input_custom(question: str):
     return data
 
 
-def input_path(question: str):
+def input_path(question: str, accept_empty: bool = False):
     while True:
         path = input(f"{question}\n")
 
@@ -54,6 +54,8 @@ def input_path(question: str):
             os.system("cls" if os.name == "nt" else "clear")
             return path
         else:
+            if path == "" and accept_empty:
+                return path
             print(
                 "O CAMINHO INFORMADO ESTÁ INCORRETO OU NÃO EXISTE, INFORME UM CAMINHO DE PASTA VÁLIDO\n"
             )
@@ -138,8 +140,11 @@ def input_dimensions(sizes: list, weight_by_size: float):
 def verify_path_product():
     while True:
         path = input_path(
-            "QUAL O CAMINHO ONDE ESTAO AS FOTOS, CAPAS E ARQUIVOS DO PRODUTO?"
+            f"QUAL O CAMINHO ONDE ESTAO AS FOTOS, CAPAS E ARQUIVOS DO PRODUTO?"
         )
+
+        if path == "":
+            path = settings.PATH_DEFAULT
 
         cover_directory = os.path.join(path, "Capa")
         pictures_directory = os.path.join(path, "Fotos")
@@ -156,12 +161,16 @@ def verify_path_product():
             )
 
     if not os.path.exists(os.path.join(path, "product_data.json")):
-        print("ARQUIVO DE CONFIGURACAO .JSON NAO ENCONTRADO NA PASTA, VAMOS CRIA-LO")
+        print(
+            "ARQUIVO DE CONFIGURACAO .JSON NAO ENCONTRADO NA PASTA, VAMOS CRIA-LO\n\n"
+        )
         fabric_name = input_custom("DIGITE O NOME DO TECIDO:")
         cod = input_custom("DIGITE O CODIGO DO TECIDO:")
         folder_name = input_custom("DIGITE O NOME DA PASTA DO PRODUTO")
         composition = input_custom("DIGITE A COMPOSIÇÃO DO TECIDO:")
         width = input_custom("DIGITE A LARGURA DO TECIDO:")
+        price_cost_bruto = input_number("INFORME O PREÇO DE CUSTO BRUTO DO PRODUTO:")
+        company = input_choices(settings.COMPANYS, "QUAL É O NOME DO FORNECEDOR PRINCIPAL?")
 
         data = {
             "fabric_name": fabric_name,
@@ -169,18 +178,23 @@ def verify_path_product():
             "folder_name": folder_name,
             "composition": composition,
             "width": width,
+            "fornecedor": company['name'],
+            "id_fornecedor": company['id_fornecedor'],
+            "price_cost_bruto": price_cost_bruto
         }
 
-        with open(os.path.join(path, "product_data.json"), "w", encoding="utf-8") as arq:
+        with open(
+            os.path.join(path, "product_data.json"), "w", encoding="utf-8"
+        ) as arq:
             json.dump(data, arq, ensure_ascii=False, indent=4)
-    
+
     with open(os.path.join(path, "product_data.json"), encoding="utf-8") as arq:
         data = json.load(arq)
 
     upload_images = input_choices(
         {"1": "SIM", "2": "NÃO"}, "É NECESSÁRIO SUBIR AS IMAGENS PARA A AWS?"
     )
-    
+
     if upload_images == "SIM":
         upload_folder_to_s3_parallel(pictures_directory, data["folder_name"])
 
@@ -197,8 +211,13 @@ def import_images_of_company():
     company = input_choices(
         settings.COMPANYS, "EM QUAL ATACADO SERÁ FEITA A EXTRAÇÃO DE FOTOS?"
     )
-    path_save = input_path("EM QUAL PASTA SERÁ SALVO OS ARQUIVOS BAIXADOS?")
-    cod_or_url = input_cod(company)
+    path_save = input_path(
+        f"EM QUAL PASTA SERÁ SALVO OS ARQUIVOS BAIXADOS?\n CASO NÃO SEJA INFORMADO, O CAMINHO PADRÃO SERÁ USADO:\n{settings.PATH_DEFAULT}",
+        accept_empty=True,
+    )
+    if path_save == "":
+        path_save = settings.PATH_DEFAULT
+    cod_or_url = input_cod(company['name'])
     fabric_name = input_custom("QUAL É O NOME DO TECIDO A SER CADASTRADO?")
 
     while True:
@@ -215,7 +234,7 @@ def import_images_of_company():
             }
             return imported_product | user_inputs
         except Exception as e:
-            #os.system("cls" if os.name == "nt" else "clear")
+            # os.system("cls" if os.name == "nt" else "clear")
             print("\n", e)
             print("\nINFORME NOVAMENTE AS INFORMAÇÕES")
 
@@ -226,3 +245,18 @@ def import_images_of_company():
 
             path_save = input_path("EM QUAL PASTA SERÁ SALVO OS ARQUIVOS BAIXADOS?")
             cod_or_url = input_cod(company)
+
+
+def profit_for_loja(lojas=settings.LOJAS):
+
+    profit_margin = {}
+
+    for loja in lojas.keys():
+        
+        profit = input_number(f"QUAL A MARGEM DE LUCRO DA LOJA {loja}? (CASO NÃO DESEJE INFORMAR DIGITE 0)")
+        if profit == 0: continue
+        
+        profit_margin[loja] = profit
+        
+
+    return profit_margin

@@ -6,24 +6,35 @@ from apps.data_scraping.utils.selenium_webdriver import create_webdriver
 import re
 
 
-def aquarela_scraping(url, fabric_name):
+def aquarela_scraping(url, fabric_name, company:dict):
 
     nav = create_webdriver()
 
     nav.get(url)
-    picture_div = nav.find_elements(By.CLASS_NAME, "item")
+    picture_div = nav.find_elements(By.CLASS_NAME, "gallery-item-container")
 
-    infos = nav.find_element(By.TAG_NAME, "h2").text
-    cod = re.search(r"Ordem: (\d+)", infos).group(1)
-    composition = re.search(r"Composição: (.+)", infos).group(1)
-    width = re.search(r"Largura: (\d+,\d+)", infos)
-    width = width.group(1) if width else "1,50"
+    # infos = nav.find_element(By.TAG_NAME, "h2").text
+
+    infos = nav.find_elements(By.CLASS_NAME, "image-box")
+
+    _info = {}
+    for info in infos:
+        _p = info.find_elements(By.TAG_NAME, "p")
+
+        _info[_p[0].text] = _p[1].text
+
+    print(_info)
+
+    cod = _info.get("Referência", None)
+    composition = _info.get("Composição", None)
+    width = _info.get("Largura - Peça", None)
+    width = width.split("Mt -")[0] if width else None
     folder_name = f"{fabric_name} A{cod}"
     urls = []
 
     for img in picture_div:
-        url_img = img.find_element(By.TAG_NAME, "a").get_attribute("href")
-        nome = img.find_element(By.CLASS_NAME, "color-code").text
+        url_img = img.find_element(By.TAG_NAME, "img").get_attribute("src")
+        nome = img.find_element(By.CLASS_NAME, "gallery-text").text
         formato = url_img.split(".")[-1]
 
         urls.append(
@@ -40,6 +51,8 @@ def aquarela_scraping(url, fabric_name):
         "folder_name": folder_name,
         "composition": composition,
         "width": width,
+        "fornecedor": company["name"],
+        "id_fornecedor": company['id_fornecedor'],
         "pictures": urls,
     }
 
@@ -48,25 +61,25 @@ def aquarela_scraping(url, fabric_name):
     return response
 
 
-# def aquarela_requests():
-#     headers = {
-#         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36",
-#         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-#         "Accept-Language": "en-US,en;q=0.5",
-#         "Connection": "keep-alive",
-#     }
-#     response = requests.get("https://aquarelatecidos.com/Tecidos%20Lisos/03%20-%20Brim%20Leve%20Const%C3%A2ncia%20Vieira/index.html", headers=headers)
+# # def aquarela_requests():
+# #     headers = {
+# #         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36",
+# #         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+# #         "Accept-Language": "en-US,en;q=0.5",
+# #         "Connection": "keep-alive",
+# #     }
+# #     response = requests.get("https://aquarelatecidos.com/Tecidos%20Lisos/03%20-%20Brim%20Leve%20Const%C3%A2ncia%20Vieira/index.html", headers=headers)
 
 
-#     soup = BeautifulSoup(response.text, 'html.parser')
+# #     soup = BeautifulSoup(response.text, 'html.parser')
 
-#     items = soup.find_all("div", class_='item')
+# #     items = soup.find_all("div", class_='item')
 
-#     for item in items:
-#         links = item.find_all("a")  # Buscar todas as tags <a> dentro do div
-#         for link in links:
-#             print("Texto do link:", link.get_text(strip=True))
-#             print("URL do link:", link.get("href"))
+# #     for item in items:
+# #         links = item.find_all("a")  # Buscar todas as tags <a> dentro do div
+# #         for link in links:
+# #             print("Texto do link:", link.get_text(strip=True))
+# #             print("URL do link:", link.get("href"))
 
 
-# aquarela_requests()
+# # aquarela_requests()

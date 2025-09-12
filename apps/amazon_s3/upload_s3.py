@@ -2,14 +2,17 @@ import boto3, os, json
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import quote
 from PIL import Image
+from decouple import config
 
 
 # Configurações da AWS
-
+BUCKET_NAME='legitimatextil'
+AWS_ACCESS_KEY = config('AWS_ACCESS_KEY')
+AWS_SECRET_KEY = config('AWS_SECRET_KEY')
 # Inicializar cliente S3
-# s3 = boto3.client(
-#     "s3", aws_access_key_id='AWS_ACCESS_TOKEN', aws_secret_access_key='AWS_SECRET_TOKEN'
-# )
+s3 = boto3.client(
+    "s3", aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY
+)
 
 
 def upload_file(local_path, s3_key):

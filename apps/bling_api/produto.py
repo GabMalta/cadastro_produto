@@ -68,7 +68,7 @@ class Produto(BlingApi):
                 os.path.join(self.cover_path, "image_urls.json")
             )
             images_url = [{"link": img[1]["img"]} for img in img_json.items()]
-            
+
             self.covers_urls = images_url
 
         else:
@@ -286,7 +286,8 @@ class Produto(BlingApi):
         color_name = color_name.title()
 
         if changed_name:
-            cod_sku = re.sub("[^0-9]", "", color_name)
+
+            cod_sku = color_name.rsplit(" ", 1)[1]
 
             if not cod_sku or cod_sku == "":
                 cod_sku = color_name
@@ -338,7 +339,7 @@ class Produto(BlingApi):
         # deposito1 = 14886526196
 
         estoque_json = self.get_estoque_json()
-        for i,id_product in enumerate(id_products, start=1):
+        for i, id_product in enumerate(id_products, start=1):
             estoque_json["produto"]["id"] = id_product
             estoque_json["deposito"]["id"] = id_deposito
             estoque_json["quantidade"] = qtd

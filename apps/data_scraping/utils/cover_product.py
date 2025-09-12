@@ -33,7 +33,7 @@ class CoverProduct:
                     self.images.remove(img)
             except (UnidentifiedImageError, FileNotFoundError):
                 self.images.remove(img)
-            
+
         self.len_path_images = len(self.images)
 
         if not os.path.exists(self.path_save):
@@ -48,7 +48,15 @@ class CoverProduct:
     def percent_of_size(self, percent):
         return self.int_round(self.size_cover * percent)
 
-    def cover_grid(self, name_save, title=None, fill=None, stroke_fill='#fff', stroke_width=5, font_color="#000"):
+    def cover_grid(
+        self,
+        name_save,
+        title=None,
+        fill=None,
+        stroke_fill="#fff",
+        stroke_width=5,
+        font_color="#000",
+    ):
 
         self.set_paths_cover()
 
@@ -83,16 +91,29 @@ class CoverProduct:
 
         cover_save = os.path.join(self.path_save, f"{name_save}.jpg")
 
-            
-        
         background.save(cover_save)
-        
+
         if title:
-            write_cover_title(cover_save, title, fill=fill, stroke_fill=stroke_fill, stroke_width=stroke_width, font_color=font_color)
-            
+            write_cover_title(
+                cover_save,
+                title,
+                fill=fill,
+                stroke_fill=stroke_fill,
+                stroke_width=stroke_width,
+                font_color=font_color,
+            )
+
         return cover_save
 
-    def cover_three(self, name_save, title=None, fill=None, stroke_fill='#fff', stroke_width=5, font_color="#000"):
+    def cover_three(
+        self,
+        name_save,
+        title=None,
+        fill=None,
+        stroke_fill="#fff",
+        stroke_width=5,
+        font_color="#000",
+    ):
         self.set_paths_cover()
 
         if self.len_path_images < 3:
@@ -126,13 +147,28 @@ class CoverProduct:
         cover_save = os.path.join(self.path_save, f"{name_save}.jpg")
 
         background.save(cover_save)
-        
+
         if title:
-            write_cover_title(cover_save, title, fill=fill, stroke_fill=stroke_fill, stroke_width=stroke_width, font_color=font_color)
-            
+            write_cover_title(
+                cover_save,
+                title,
+                fill=fill,
+                stroke_fill=stroke_fill,
+                stroke_width=stroke_width,
+                font_color=font_color,
+            )
+
         return cover_save
 
-    def cover_grid_2(self, name_save, title=None, fill=None, stroke_fill='#fff', stroke_width=5, font_color="#000"):
+    def cover_grid_2(
+        self,
+        name_save,
+        title=None,
+        fill=None,
+        stroke_fill="#fff",
+        stroke_width=5,
+        font_color="#000",
+    ):
         self.set_paths_cover()
 
         if self.len_path_images < 5:
@@ -197,10 +233,25 @@ class CoverProduct:
 
         background.save(cover_save)
         if title:
-            write_cover_title(cover_save, title, fill=fill, stroke_fill=stroke_fill, stroke_width=stroke_width, font_color=font_color)
+            write_cover_title(
+                cover_save,
+                title,
+                fill=fill,
+                stroke_fill=stroke_fill,
+                stroke_width=stroke_width,
+                font_color=font_color,
+            )
         return cover_save
 
-    def cover_grid_3(self, name_save, title=None, fill=None, stroke_fill='#fff', stroke_width=5, font_color="#000"):
+    def cover_grid_3(
+        self,
+        name_save,
+        title=None,
+        fill=None,
+        stroke_fill="#fff",
+        stroke_width=5,
+        font_color="#000",
+    ):
         self.set_paths_cover()
 
         if self.len_path_images < 6:
@@ -269,25 +320,32 @@ class CoverProduct:
         cover_save = os.path.join(self.path_save, f"{name_save}.jpg")
 
         background.save(cover_save)
-        
+
         if title:
-            write_cover_title(cover_save, title, fill=fill, stroke_fill=stroke_fill, stroke_width=stroke_width, font_color=font_color)
+            write_cover_title(
+                cover_save,
+                title,
+                fill=fill,
+                stroke_fill=stroke_fill,
+                stroke_width=stroke_width,
+                font_color=font_color,
+            )
         return cover_save
 
     def cover_full_logo(self, title, name_save, company="LEGITIMA"):
         self.set_paths_cover()
-        
+
         if company == "LEGITIMA":
-            logo_path = r"C:\Users\gabri\OneDrive\Área de Trabalho\PROGRAMACAO\PYTHON\cadastra_produto_bling\apps\data_scraping\utils\img\LOGO LEGITIMA.png"
+            logo_path = r"C:\Users\gabri\www\cadastro_produto\apps\data_scraping\utils\img\LOGO LEGITIMA.png"
         elif company == "GM":
-            logo_path = r"C:\Users\gabri\OneDrive\Área de Trabalho\PROGRAMACAO\PYTHON\cadastra_produto_bling\apps\data_scraping\utils\img\LOGO GM.png"
+            logo_path = r"C:\Users\gabri\www\cadastro_produto\apps\data_scraping\utils\img\LOGO GM.png"
 
         if self.len_path_images < 1:
             print(
                 "\nERROR: A PASTA FOTOS DEVE TER PELO MENOS 1 IMAGEM PARA SE CRIAR ESSE TIPO DE CAPA"
             )
             return None
-        path_font = r"C:\Users\gabri\OneDrive\Área de Trabalho\PROGRAMACAO\PYTHON\cadastra_produto_bling\apps\data_scraping\utils\fonts\SIFONN_PRO.otf"
+        path_font = r"C:\Users\gabri\www\cadastro_produto\apps\data_scraping\utils\fonts\SIFONN_PRO.otf"
 
         font_size = self.percent_of_size(0.05)
         font = ImageFont.truetype(path_font, font_size)
@@ -299,7 +357,7 @@ class CoverProduct:
         logo = logo.resize((self.percent_of_size(0.2), self.percent_of_size(0.2)))
 
         image = random.sample(self.images, 1)[0]
-        
+
         image = Image.open(os.path.join(self.path_images, image)).convert("RGBA")
 
         image = image.resize((self.size_cover, self.size_cover))
@@ -334,5 +392,5 @@ class CoverProduct:
         cover_save = os.path.join(self.path_save, f"{name_save}.jpg")
 
         result.save(cover_save)
-        
+
         return cover_save
