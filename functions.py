@@ -1,7 +1,7 @@
 import json
 import os
 import validators
-from apps.amazon_s3.upload_s3 import upload_folder_to_s3_parallel
+from amazon_s3.upload_s3 import upload_folder_to_s3_parallel
 from apps.data_scraping.import_images import import_images
 from apps.data_scraping.utils.save_product_json import save_product_json
 import settings
@@ -146,8 +146,9 @@ def verify_path_product():
         if path == "":
             path = settings.PATH_DEFAULT
 
+        folder_name = path.split("\\")[-1]
         cover_directory = os.path.join(path, "Capa")
-        pictures_directory = os.path.join(path, "Fotos")
+        pictures_directory = os.path.join(path, f"{folder_name} - Fotos")
 
         if os.path.exists(cover_directory) or os.path.exists(pictures_directory):
             if os.listdir(pictures_directory):

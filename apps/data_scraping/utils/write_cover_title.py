@@ -10,6 +10,7 @@ def write_cover_title(
     font_size=None,
     stroke_fill=None,
     stroke_width=0,
+    promocao=False
 ):
     def percent_of_size(size, percent):
         return int(round(size * percent))
@@ -61,5 +62,25 @@ def write_cover_title(
         stroke_fill=stroke_fill,
         stroke_width=stroke_width,
     )
-
+    
+    if promocao:
+        
+        draw.rounded_rectangle(
+            (
+                percent_of_size(width, 0),
+                percent_of_size(height, 0),
+                percent_of_size(width, 1),
+                percent_of_size(height, 0.2),
+            ),
+            radius=20,
+            fill="#ff0000",
+        )
+        
+        draw.text(
+            (percent_of_size(width, 0.5), percent_of_size(height, 0.1)),
+            "PROMOÇÃO",
+            "#FAFAFA",
+            ImageFont.truetype(path_font, percent_of_size(width, 0.085)),
+            anchor="mm",
+        )
     image.save(path_image)

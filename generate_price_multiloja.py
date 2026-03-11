@@ -1,6 +1,6 @@
-from apps.bling_api.schemas.vinculo_produto_loja import ProdutoLojaSchema
-from apps.bling_api.bling import BlingApi
-from apps.price_generator.price_generator import price_generator
+from bling_api.schemas.vinculo_produto_loja import ProdutoLojaSchema
+from bling_api.bling import BlingApi
+from price_generator.price_generator import calculate_price
 from functions import profit_for_loja
 import settings
 
@@ -32,7 +32,7 @@ def alterar_preco_multiloja(codigo: str, metragens: list[str], preco_custo: floa
 
         for loja, margem in margem_por_loja.items():
 
-            preco_venda, _ = price_generator(preco_custo, float(produto["metragem"]), margem)
+            preco_venda, _ = calculate_price(preco_custo, float(produto["metragem"]), margem)
 
             produto_loja = ProdutoLojaSchema(
                 preco=preco_venda,

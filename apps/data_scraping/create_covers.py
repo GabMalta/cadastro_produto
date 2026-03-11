@@ -1,9 +1,43 @@
 import os
 import random
-from apps.amazon_s3.upload_s3 import upload_folder_to_s3_parallel
+from amazon_s3.upload_s3 import upload_folder_to_s3_parallel
 from apps.data_scraping.utils.cover_product import CoverProduct
 from apps.data_scraping.utils.image_info import image_info
 from apps.data_scraping.utils.write_cover_title import write_cover_title
+
+
+
+def random_color():
+    """Gera uma cor aleatória em RGB (0-255)."""
+    return tuple(random.randint(0, 255) for _ in range(3))
+
+def luminance(rgb):
+    """Calcula a luminância relativa de uma cor RGB."""
+    r, g, b = [x / 255.0 for x in rgb]
+    def adjust(c):
+        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+    r, g, b = adjust(r), adjust(g), adjust(b)
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def contrast_ratio(c1, c2):
+    """Calcula o contraste entre duas cores."""
+    l1, l2 = luminance(c1), luminance(c2)
+    brightest, darkest = max(l1, l2), min(l1, l2)
+    return (brightest + 0.05) / (darkest + 0.05)
+
+def rgb_to_hex(rgb):
+    """Converte RGB para formato hexadecimal."""
+    return "#{:02X}{:02X}{:02X}".format(*rgb)
+
+def gerar_cores_legiveis():
+    """Gera uma cor de fundo e uma cor de fonte legível sobre ela."""
+    bg = random_color()
+    while True:
+        fg = random_color()
+        if contrast_ratio(bg, fg) >= 4.5:
+            return rgb_to_hex(bg), rgb_to_hex(fg)
+
 
 
 def create_covers(
@@ -18,10 +52,15 @@ def create_covers(
     stroke_fill="#fff",
     stroke_width=5,
     font_color="#000",
+    promocao=False,
 ):
+    
+    if not fill and not font_color:
+        fill, font_color = gerar_cores_legiveis()
+    
     s3_folder = os.path.join(os.path.basename(path), "Capa")
 
-    cover = CoverProduct(path)
+    cover = CoverProduct(path, promocao=promocao)
 
     cover_1 = cover.cover_grid(
         f"CAPA 1{' - ' + name_saved if name_saved else ''}",
@@ -58,6 +97,13 @@ def create_covers(
     cover_5 = cover.cover_full_logo(
         title, f"CAPA 5 {'- ' + name_saved if name_saved else ''}", company=company
     )
+    
+    cover_6 = cover.layout_faixa_horizontal(
+        f"CAPA 6{' - ' + name_saved if name_saved else ''}",
+        title=title,
+        fill=fill,
+        font_color=font_color
+    )
 
     if create_img_info:
         cover_path = os.path.join(path, "Capa")
@@ -71,7 +117,7 @@ def create_covers(
         print(cover_5)
         covers = [
             cover
-            for cover in (cover_1, cover_2, cover_3, cover_4, cover_5)
+            for cover in (cover_1, cover_2, cover_3, cover_4, cover_5, cover_6)
             if cover and os.path.exists(cover)
         ]
 

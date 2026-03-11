@@ -5,16 +5,6 @@ MY_COMPANY_SETTINGS = {
     "GM TECIDOS": {"id_deposito": 14886526196, "letter_color": "#FFA500"},
 }
 
-# COMPANYS = {
-#     "1": "DISPARADA",
-#     "2": "AQUARELA",
-#     "3": "PITANGUI",
-#     "4": "JANON",
-#     "5": "JR ANDRADE",
-#     "6": "CHARMY",
-#     "7": "ACTUAL",
-# }
-
 COMPANYS = {
     "1": {
         "name": "DISPARADA",
@@ -25,12 +15,18 @@ COMPANYS = {
     },
     "2": {
         "name": "AQUARELA",
-        "url": "",
-        "pathImage": "",
+        "url": r"https://aquarelatecidos.com/api/get_data_for_artigo_view/",
+        "pathImage": "https://sistema.aquarelatecidos.com/upload_artigo_images/",
         "codPrefix": "A",
         "id_fornecedor": 13203733926,
     },
-    "3": {"name": "PITANGUI", "url": "", "pathImage": "", "codPrefix": "P", "id_fornecedor": 16818866180},
+    "3": {
+        "name": "PITANGUI",
+        "url": r"https://pitanguitecidos.com.br/api/get_data_for_artigo_view/",
+        "pathImage": r"https://sistema.pitanguitecidos.com.br/upload_artigo_images/",
+        "codPrefix": "P",
+        "id_fornecedor": 16818866180,
+    },
     "4": {
         "name": "JANON",
         "url": r"https://tecidosjanon.com/api/get_data_for_artigo_view/",
@@ -58,6 +54,13 @@ COMPANYS = {
         "pathImage": r"https://actualtextil.com.br/sistema/upload_artigo_images/",
         "codPrefix": "ACT",
         "id_fornecedor": 17615426521,
+    },
+    "8": {
+        "name": "FLORENCA",
+        "url": r"https://florencatecidos.com.br/api/get_data_for_artigo_view/",
+        "pathImage": r"https://sistema.florencatecidos.com.br/upload_artigo_images/",
+        "codPrefix": "F",
+        "id_fornecedor": 12475713682,
     },
 }
 

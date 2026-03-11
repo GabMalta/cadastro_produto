@@ -1,0 +1,135 @@
+{
+  "assets": {
+    "logos": {
+      "LEGITIMA": "img/LOGO LEGITIMA.png",
+      "GM": "img/LOGO GM.png"
+    },
+    "fonts": {
+      "title": "fonts/SIFONN_PRO.otf",
+      "default": "arialbd.ttf"
+    }
+  },
+  "layouts": {
+    "faixa_horizontal": {
+      "description": "4 images in horizontal strip with bottom banner",
+      "min_images": 4,
+      "banner_height_percent": 0.1171875,
+      "image_count": 4,
+      "structure": "strip"
+    },
+    "grid_3x3": {
+      "description": "3x3 grid of 9 images",
+      "min_images": 9,
+      "image_count": 9,
+      "structure": "grid",
+      "positions": {
+        "size_percent": 0.32421875,
+        "spacing_percent": 0.33828125
+      }
+    },
+    "cover_three": {
+      "description": "3 images in asymmetric layout",
+      "min_images": 3,
+      "image_count": 3,
+      "structure": "asymmetric",
+      "positions": {
+        "0": {
+          "size": [0.49296875, 1.0],
+          "position": [0, 0]
+        },
+        "1": {
+          "size": [0.49296875, 0.49296875],
+          "position": [0.50703125, 0.50703125]
+        },
+        "2": {
+          "size": [0.49296875, 0.49296875],
+          "position": [0.50703125, 0]
+        }
+      }
+    },
+    "grid_5_images": {
+      "description": "Custom layout with 5 images",
+      "min_images": 5,
+      "image_count": 5,
+      "structure": "custom_5",
+      "positions": {
+        "0": {
+          "size": [0.7, 0.29375],
+          "position": [0, 0]
+        },
+        "1": {
+          "size": [0.29375, 0.7],
+          "position": [0, 0.3]
+        },
+        "2": {
+          "size": [0.7, 0.29375],
+          "position": [0.3, 0.70625]
+        },
+        "3": {
+          "size": [0.29375, 0.7],
+          "position": [0.70625, 0]
+        },
+        "4": {
+          "size": [0.4, 0.4],
+          "position": [0.3, 0.3]
+        }
+      }
+    },
+    "grid_6_images": {
+      "description": "Custom layout with 6 images",
+      "min_images": 6,
+      "image_count": 6,
+      "structure": "custom_6",
+      "positions": {
+        "0": {
+          "size": [0.4984375, 0.32265625],
+          "position": [0, 0]
+        },
+        "1": {
+          "size": [0.4984375, 0.32265625],
+          "position": [0, 0.67734375]
+        },
+        "2": {
+          "size": [0.2453125, 0.32265625],
+          "position": [0, 0.3390625]
+        },
+        "3": {
+          "size": [0.2453125, 0.32265625],
+          "position": [0.253125, 0.3390625]
+        },
+        "4": {
+          "size": [0.4921875, 0.4921875],
+          "position": [0.5078125, 0]
+        },
+        "5": {
+          "size": [0.4921875, 0.4921875],
+          "position": [0.5078125, 0.5078125]
+        }
+      }
+    },
+    "full_image_with_logo": {
+      "description": "Full image with logo and text overlay",
+      "min_images": 1,
+      "image_count": 1,
+      "structure": "full_image",
+      "logo_size_percent": 0.2,
+      "logo_position_percent": [0.4, 0.05],
+      "text_background": {
+        "position_percent": [0.0859375, 0.63359375, 0.9140625, 0.9],
+        "fill": [255, 255, 255, 100]
+      },
+      "text_position_percent": [0.5, 0.766796875],
+      "text_size_percent": 0.05
+    }
+  },
+  "defaults": {
+    "background_color": [255, 255, 255],
+    "font_color": "#000",
+    "stroke_color": "#fff",
+    "stroke_width": 5,
+    "fill_color": null,
+    "image_format": "RGB",
+    "save_quality": 95,
+    "title_max_length": 20
+  }
+}

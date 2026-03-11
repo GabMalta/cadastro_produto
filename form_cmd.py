@@ -50,11 +50,11 @@ def form_cmd() -> dict:
         if cost_price == "OUTRO":
             cost_price = input_number("QUAL O PREÇO DE CUSTO DO TECIDO?")
             imported_product["price_cost_bruto"] = cost_price
-            save_product_json(imported_product['path'], imported_product)
+            save_product_json(imported_product['path_save'], imported_product)
     else:
         cost_price = input_number("QUAL O PREÇO DE CUSTO DO TECIDO?")
         imported_product["price_cost_bruto"] = cost_price
-        save_product_json(imported_product['path'], imported_product)
+        save_product_json(imported_product['path_save'], imported_product)
 
     if not imported_product.get("id_fornecedor", None):
         fornecedor = input_choices(settings.COMPANYS, "QUAL O FORNECEDOR PRINCIPAL?")

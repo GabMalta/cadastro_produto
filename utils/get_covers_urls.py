@@ -1,5 +1,5 @@
 import os
-from apps.amazon_s3.upload_s3 import upload_folder_to_s3_parallel
+from amazon_s3.upload_s3 import upload_folder_to_s3_parallel
 from utils.get_image_json import get_image_json
 
 
