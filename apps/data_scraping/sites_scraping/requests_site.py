@@ -1,6 +1,7 @@
 from urllib.parse import urljoin
 import requests
 
+
 def site_request(cod, fabric_name, company):
 
     headers = {
@@ -20,24 +21,64 @@ def site_request(cod, fabric_name, company):
     if response["error"] == True:
         raise ValueError(response["message"])
 
-    response = response["data"]["artigo"]
-    print(response)
+    data_artigo = response["data"]["artigo"]
+    estampas = data_artigo.get("cores", [])
 
-    urls = [
-        {
-            "name": cor["codigo"],
-            "url_img": urljoin(company["pathImage"], cor["image_path"]),
-            "format": cor["image_path"].split(".")[-1] if cor["image_path"] else "jpg",
-        }
-        for cor in response["cores"]
-    ]
+    if estampas:
+        urls = []
+        for estampa in estampas:
+            urls.append(
+                {
+                    "name": estampa["codigo"],
+                    "url_img": urljoin(company["pathImage"], estampa["image_path"]),
+                    "format": estampa["image_path"].split(".")[-1] if estampa["image_path"] else "jpg",
+                }
+            )
+
+    else:
+
+        page = 1
+        urls = []
+        while True:
+            response_estampas = requests.get(
+                urljoin(company["url_estampas"], cod), headers=headers, params={"page": page}
+            )
+
+            if response_estampas.status_code != 200:
+                raise ValueError(
+                    f"Erro ao buscar estampas: {response_estampas.status_code}, {response_estampas.text}"
+                )
+
+            response_estampas_data = response_estampas.json().get("data", {})
+
+            estampas = response_estampas_data.get("estampas", [])
+
+            if not estampas:
+                raise ValueError("Nenhuma estampa encontrada para o código fornecido.")
+
+            for estampa in estampas:
+                urls.append(
+                    {
+                        "name": estampa["codigo"],
+                        "url_img": urljoin(company["pathImage"], estampa["image_filename"]),
+                        "format": (
+                            estampa["image_filename"].split(".")[-1] if estampa["image_filename"] else "jpg"
+                        ),
+                    }
+                )
+
+            if not response_estampas_data.get("has_next_page"):
+                print(f"Todas as páginas de estampas foram processadas. Pagina atual: {page}")
+                break
+
+            page += 1
 
     response = {
         "fabric_name": fabric_name,
         "cod": f"{company['codPrefix']}{cod}",
         "folder_name": f"{fabric_name} {company['codPrefix']}{cod}",
-        "composition": response["composicao"],
-        "width": response["largura"],
+        "composition": data_artigo["composicao"],
+        "width": data_artigo["largura"],
         "fornecedor": company["name"],
         "id_fornecedor": company["id_fornecedor"],
         "pictures": urls,

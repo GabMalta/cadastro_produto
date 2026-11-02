@@ -1,5 +1,6 @@
 import json
 import os
+from bling_api import BlingApi
 import validators
 from amazon_s3.upload_s3 import upload_folder_to_s3_parallel
 from apps.data_scraping.import_images import import_images
@@ -24,20 +25,11 @@ def input_choices(choices: dict, question: str) -> str | dict:
 
 
 def input_cod(company: str):
-    url_request = True if company == "AQUARELA" else False
-
     while True:
         data = input(
-            f'INFORME {"A URL" if url_request else "O CÓDIGO"} REFERENTE AO ARTIGO QUE SERÁ CADASTRADO:\n'
+            f'INFORME O CÓDIGO REFERENTE AO ARTIGO QUE SERÁ CADASTRADO:\n'
         )
-
-        if url_request:
-            if validators.url(data):
-                return data
-            else:
-                print("URL inválida! Por favor, informe uma URL válida.")
-        else:
-            return data
+        return data
 
 
 def input_custom(question: str):
@@ -137,11 +129,12 @@ def input_dimensions(sizes: list, weight_by_size: float):
     return dimensions_and_sizes
 
 
-def verify_path_product():
+def verify_path_product(path=None, upload_for_s3=True):
     while True:
-        path = input_path(
-            f"QUAL O CAMINHO ONDE ESTAO AS FOTOS, CAPAS E ARQUIVOS DO PRODUTO?"
-        )
+        if path is None:
+            path = input_path(
+                f"QUAL O CAMINHO ONDE ESTAO AS FOTOS, CAPAS E ARQUIVOS DO PRODUTO?"
+            )
 
         if path == "":
             path = settings.PATH_DEFAULT
@@ -149,7 +142,7 @@ def verify_path_product():
         folder_name = path.split("\\")[-1]
         cover_directory = os.path.join(path, "Capa")
         pictures_directory = os.path.join(path, f"{folder_name} - Fotos")
-
+        
         if os.path.exists(cover_directory) or os.path.exists(pictures_directory):
             if os.listdir(pictures_directory):
                 break
@@ -191,13 +184,14 @@ def verify_path_product():
 
     with open(os.path.join(path, "product_data.json"), encoding="utf-8") as arq:
         data = json.load(arq)
+    
+    if upload_for_s3:
+        upload_images = input_choices(
+            {"1": "SIM", "2": "NÃO"}, "É NECESSÁRIO SUBIR AS IMAGENS PARA A AWS?"
+        )
 
-    upload_images = input_choices(
-        {"1": "SIM", "2": "NÃO"}, "É NECESSÁRIO SUBIR AS IMAGENS PARA A AWS?"
-    )
-
-    if upload_images == "SIM":
-        upload_folder_to_s3_parallel(pictures_directory, data["folder_name"])
+        if upload_images == "SIM":
+            upload_folder_to_s3_parallel(pictures_directory, data["folder_name"])
 
     product_path = {
         "cover_directory": cover_directory,
@@ -209,6 +203,7 @@ def verify_path_product():
 
 
 def import_images_of_company():
+    
     company = input_choices(
         settings.COMPANYS, "EM QUAL ATACADO SERÁ FEITA A EXTRAÇÃO DE FOTOS?"
     )
@@ -230,7 +225,6 @@ def import_images_of_company():
             )
             user_inputs = {
                 "company": company,
-                "path_save": path_save,
                 "fabric_name": fabric_name,
             }
             return imported_product | user_inputs
@@ -261,3 +255,90 @@ def profit_for_loja(lojas=settings.LOJAS):
         
 
     return profit_margin
+
+def _str_to_number(key: str):
+    try:
+        return int(key)
+    except ValueError:
+        pass
+    try:
+        return float(key.replace(",", "."))
+    except ValueError:
+        return None
+
+
+def criar_estruturas(id_principal: int, api: BlingApi | None = None):
+
+    if not api:
+        api = BlingApi()
+
+    metragens = [0.5, 2, 3, 4, 5, 6, 7, 10, 15, 30, 50]
+
+    data = api.get_product(id_principal).get("data")
+
+    if not data:
+        print(f"Produto com id {id_principal} não encontrado!")
+        return
+
+    produto_principal = {"id": data.get("id"), "codigo": data.get("codigo")}
+    variacoes_principal = [
+        {
+            "id": var.get("id"),
+            "sku": var.get("codigo").split("m-")[1],
+            "metragem": var.get("codigo").split("m-")[0],
+        }
+        for var in data["variacoes"]
+    ]
+
+
+    metragem, sku = produto_principal["codigo"].split("m-")
+
+    metragem = _str_to_number(metragem)
+
+    skus_pesquisar = [f"{mt}m-{sku}" for mt in metragens]
+
+    data_produtos_editar = api.get_products({"codigos[]": skus_pesquisar}).get("data")
+
+    if not data_produtos_editar:
+        print("sem produtos a editar")
+        return
+
+    produtos_editar = [{"id": dt["id"], "codigo": dt["codigo"]} for dt in data_produtos_editar]
+    
+    for produto_editar in produtos_editar:
+
+        data_editar = api.get_product(produto_editar["id"]).get("data")
+        
+
+        variacoes_editar = [{"id": var["id"], "codigo": var["codigo"]} for var in data_editar["variacoes"]]
+        
+        for var in variacoes_editar:
+
+            metragem_editar = _str_to_number(var["codigo"].split("m-")[0])
+            sku_editar = var["codigo"].split("m-")[1]
+            
+            try:
+                variacao_pricipal = [
+                    var_princ for var_princ in variacoes_principal if var_princ["sku"] == sku_editar ][0]
+
+                metragem_principal = _str_to_number(variacao_pricipal["metragem"])
+
+                payload = {
+                    "formato": "E",
+                    "estrutura": {
+                        "tipoEstoque": "V",
+                        "lancamentoEstoque": "A",
+                        "componentes": [
+                            {
+                                "produto": {"id": variacao_pricipal["id"]},
+                                "quantidade": metragem_principal * metragem_editar,
+                            }
+                        ],
+                    },
+                }
+
+                api.edit_product(var["id"], payload)
+
+                print(f"{var['codigo']} Editado!")
+            except Exception as e:
+                print(f"Erro no codigo {var["codigo"]} \n {e}")

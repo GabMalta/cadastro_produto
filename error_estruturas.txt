@@ -1,0 +1,71 @@
+--- 16380315348 ---
+Traceback (most recent call last):
+  File "c:\Users\gabri\www\cadastro_produto\venv\Lib\site-packages\bling_api\bling.py", line 79, in _request_json
+    response = request_method(
+               ^^^^^^^^^^^^^^^
+  File "c:\Users\gabri\www\cadastro_produto\venv\Lib\site-packages\requests\sessions.py", line 664, in patch
+    return self.request("PATCH", url, data=data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\gabri\www\cadastro_produto\venv\Lib\site-packages\requests\sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\gabri\www\cadastro_produto\venv\Lib\site-packages\requests\sessions.py", line 713, in send
+    r = dispatch_hook("response", hooks, r, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\gabri\www\cadastro_produto\venv\Lib\site-packages\requests\hooks.py", line 31, in dispatch_hook
+    _hook_data = hook(hook_data, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\gabri\www\cadastro_produto\venv\Lib\site-packages\requests_policy\http_hooks.py", line 29, in hook_raise_for_status
+    response.raise_for_status()
+  File "c:\Users\gabri\www\cadastro_produto\venv\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.bling.com.br/Api/v3/produtos/16380315457
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\gabri\www\cadastro_produto\teste.py", line 276, in <module>
+    criar_estruturas(id_pai, api)
+  File "c:\Users\gabri\www\cadastro_produto\teste.py", line 84, in criar_estruturas
+    api.edit_product(var["id"], payload)
+  File "c:\Users\gabri\www\cadastro_produto\venv\Lib\site-packages\bling_api\bling.py", line 239, in edit_product
+    return self._request_json("patch", f"produtos/{produto_pai_id}", json=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\gabri\www\cadastro_produto\venv\Lib\site-packages\bling_api\bling.py", line 85, in _request_json
+    raise BlingRequestError(
+bling_api.exceptions.BlingRequestError: Erro HTTP em PATCH produtos/16380315457
+
+--- 16403647593 ---
+Traceback (most recent call last):
+  File "c:\Users\gabri\www\cadastro_produto\teste.py", line 276, in <module>
+    criar_estruturas(id_pai, api)
+  File "c:\Users\gabri\www\cadastro_produto\teste.py", line 64, in criar_estruturas
+    variacao_pricipal = [
+                        ^
+IndexError: list index out of range
+
+--- 16405259936 ---
+Traceback (most recent call last):
+  File "c:\Users\gabri\www\cadastro_produto\teste.py", line 276, in <module>
+    criar_estruturas(id_pai, api)
+  File "c:\Users\gabri\www\cadastro_produto\teste.py", line 64, in criar_estruturas
+    variacao_pricipal = [
+                        ^
+IndexError: list index out of range
+
+--- 16546432374 ---
+Traceback (most recent call last):
+  File "c:\Users\gabri\www\cadastro_produto\teste.py", line 276, in <module>
+  File "c:\Users\gabri\www\cadastro_produto\teste.py", line 64, in criar_estruturas
+    variacao_pricipal = [
+                        ^
+IndexError: list index out of range
+
+--- 16614161221 ---
+Traceback (most recent call last):
+  File "c:\Users\gabri\www\cadastro_produto\teste.py", line 276, in <module>
+  File "c:\Users\gabri\www\cadastro_produto\teste.py", line 64, in criar_estruturas
+    variacao_pricipal = [
+                        ^
+IndexError: list index out of range
+

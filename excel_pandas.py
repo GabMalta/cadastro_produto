@@ -12,7 +12,7 @@ def excluir_arq_pasta(path):
     for arq in os.listdir(os.path.join(path, "Capa")):
         if not arq.startswith("IA_"):
             path_remove = os.path.join(path, "Capa", arq)
-            if os.path.isfile(path_remove):
+            if os.path.isfile(path_remove) and not arq.startswith("IA_"):
                 os.remove(path_remove)
 
 

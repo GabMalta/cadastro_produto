@@ -13,7 +13,7 @@ from form_cmd import form_cmd
 
 # from functions import input_choices, input_number
 from bling_api.schemas.produto import ProdutoSchema
-from functions import input_choices
+from functions import input_choices, criar_estruturas
 from generate_recommended_uses import gerar_usos_tecido
 import settings
 from utils.compose_variations import compose_variations
@@ -22,12 +22,12 @@ from utils.get_covers_urls import get_covers_urls
 
 def main():
 
-    bling = BlingApi()
-
     form_response = form_cmd()
 
     if form_response["operation_type"] == "BAIXAR":
         return
+
+    bling = BlingApi()
 
     try:
         print("Gerando usos recomendados...")
@@ -36,7 +36,8 @@ def main():
     except Exception as e:
         print(f"Erro ao gerar usos recomendados: {e}")
         usos_recomendados = ""
-    
+
+    id_produto_1metro = None
     capa_ia = input_choices({"1": "Sim", "2": "Não"}, "Criou capas com IA?")
     for i, info in enumerate(form_response["sizes_and_dimensions"]):
         if form_response["create_cover"]:
@@ -56,8 +57,6 @@ def main():
                 stroke_fill="black",
                 name_saved=f"CAPA ({info['size']}m {i+1})",
             )
-
-            
 
             if capa_ia == "Sim":
                 s3_folder = os.path.join(os.path.basename(form_response["path"]), "Capa")
@@ -89,7 +88,7 @@ def main():
 
         produto = ProdutoSchema(
             codigo=codigo,
-            nome=f"{info['size']} {'Metros' if int(info['size']) > 1 else 'Metro'} {form_response['nome']} ({info['size']}m x {form_response["width"]}m)",
+            nome=f"{info['size']} {'Metros' if int(info['size']) > 1 else 'Metro'} {form_response['nome']} ({str(info['size']).replace(".", ",")}m x {str(form_response["width"]).replace(".", ",")}m)",
             preco=price,
             fornecedor={
                 "id": 720948394,
@@ -115,26 +114,26 @@ def main():
             form_response["pictures_path"],
             form_response["changed_name"],
         )
-        
 
         produto.variacoes = variations
         produto.camposCustomizados[2].valor = f"{info['size']}m x {form_response['width']}m"
         produto.camposCustomizados[3].valor = form_response["fabric_name"]
         produto.camposCustomizados[4].valor = "Tecido"
         produto.camposCustomizados[5].valor = form_response["composition"]
-        produto.camposCustomizados[6].valor = str(info["size"])
+        produto.camposCustomizados[6].valor = str(form_response["width"])
+        produto.camposCustomizados[7].valor = str(info["size"])
         produto.camposCustomizados[12].valor = "Legítima Têxtil"
         produto.camposCustomizados[15].valor = usos_recomendados
         produto.camposCustomizados[16].valor = str(info["weight"])
         produto.camposCustomizados[20].valor = "x".join(
             [str(int(x)) for x in (info["width"], info["height"], info["profundidade"])]
         )
-        
+
         with open("produto.json", "w", encoding="utf-8") as f:
             json.dump(produto.model_dump(), f, ensure_ascii=False, indent=4)
-        
+
         try:
-        
+
             product_and_variations = bling.create_product(produto)
 
             if len(form_response["profit_loja"].items()) > 0:
@@ -164,8 +163,48 @@ def main():
                         bling.create_link_with_store(produto)
                         print(f"Preço {loja} para {variation['nome']} criada!")
 
+            if info["size"] == 1:
+                id_produto_1metro = product_and_variations["id_pai"]
+
+            for produto in product_and_variations["variations"]:
+                try:
+                    if info["size"] == 1:
+                        bling.create_estoque(
+                            {
+                                "produto": {"id": produto["id"]},
+                                "deposito": {
+                                    "id": settings.MY_COMPANY_SETTINGS[form_response["my_company"]][
+                                        "id_deposito"
+                                    ]
+                                },
+                                "operacao": "B",
+                                "quantidade": form_response["estoque_padrao"],
+                            }
+                        )
+                        print(f"Estoque para {produto['nome']} criado com sucesso!")
+
+                    bling.create_product_fornecedor(
+                        {
+                            "produto": {"id": produto["id"]},
+                            "fornecedor": {
+                                "id": form_response["imported_product"]["id_fornecedor"],
+                            },
+                            "precoCusto": cost,
+                            "precoCompra": cost,
+                            "padrao": True,
+                        }
+                    )
+                    print(f"Custo para {produto['nome']} criado com sucesso!")
+
+                except Exception as e:
+                    print(f"Erro ao criar estoque para {produto['nome']}: {e}")
+
         except Exception as e:
             print(e)
+            print(e.response_body)
+
+    if id_produto_1metro:
+        criar_estruturas(id_produto_1metro, bling)
 
 
 if __name__ == "__main__":

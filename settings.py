@@ -9,6 +9,7 @@ COMPANYS = {
     "1": {
         "name": "DISPARADA",
         "url": r"https://disparadatecidos.com.br/api/get_data_for_artigo_view/",
+        "url_estampas": r"https://disparadatecidos.com.br/api/search_estampas/",
         "pathImage": r"https://sistema.disparadatecidos.com.br/upload_artigo_images/",
         "codPrefix": "D",
         "id_fornecedor": 10770429387,
@@ -16,6 +17,7 @@ COMPANYS = {
     "2": {
         "name": "AQUARELA",
         "url": r"https://aquarelatecidos.com/api/get_data_for_artigo_view/",
+        "url_estampas": r"https://aquarelatecidos.com/api/search_estampas/",
         "pathImage": "https://sistema.aquarelatecidos.com/upload_artigo_images/",
         "codPrefix": "A",
         "id_fornecedor": 13203733926,
@@ -23,6 +25,7 @@ COMPANYS = {
     "3": {
         "name": "PITANGUI",
         "url": r"https://pitanguitecidos.com.br/api/get_data_for_artigo_view/",
+        "url_estampas": r"https://pitanguitecidos.com.br/api/search_estampas/",
         "pathImage": r"https://sistema.pitanguitecidos.com.br/upload_artigo_images/",
         "codPrefix": "P",
         "id_fornecedor": 16818866180,
@@ -30,6 +33,7 @@ COMPANYS = {
     "4": {
         "name": "JANON",
         "url": r"https://tecidosjanon.com/api/get_data_for_artigo_view/",
+        "url_estampas": r"https://tecidosjanon.com/api/search_estampas/",
         "pathImage": r"https://tecidosjanon.com/sistema/upload_artigo_images/",
         "codPrefix": "J",
         "id_fornecedor": 10770429598,
@@ -37,6 +41,7 @@ COMPANYS = {
     "5": {
         "name": "JR ANDRADE",
         "url": r"https://jrandradetecidos.com.br/api/get_data_for_artigo_view/",
+        "url_estampas": r"https://jrandradetecidos.com.br/api/search_estampas/",
         "pathImage": r"https://sistema.jrandradetecidos.com.br/upload_artigo_images/",
         "codPrefix": "JR",
         "id_fornecedor": 16725540431,
@@ -44,13 +49,15 @@ COMPANYS = {
     "6": {
         "name": "CHARMY",
         "url": r"https://minascharmytecidos.com/api/get_data_for_artigo_view/",
-        "pathImage": r"https://minascharmytecidos.com/sistema/upload_artigo_images/",
+        "url_estampas": r"https://minascharmytecidos.com/api/search_estampas/",
+        "pathImage": r"https://sistema.minascharmytecidos.com/upload_artigo_images/",
         "codPrefix": "C",
         "id_fornecedor": 15039175357,
     },
     "7": {
         "name": "ACTUAL",
         "url": r"https://actualtextil.com.br/api/get_data_for_artigo_view/",
+        "url_estampas": r"https://actualtextil.com.br/api/search_estampas/",
         "pathImage": r"https://actualtextil.com.br/sistema/upload_artigo_images/",
         "codPrefix": "ACT",
         "id_fornecedor": 17615426521,
@@ -58,9 +65,18 @@ COMPANYS = {
     "8": {
         "name": "FLORENCA",
         "url": r"https://florencatecidos.com.br/api/get_data_for_artigo_view/",
+        "url_estampas": r"https://florencatecidos.com.br/api/search_estampas/",
         "pathImage": r"https://sistema.florencatecidos.com.br/upload_artigo_images/",
         "codPrefix": "F",
         "id_fornecedor": 12475713682,
+    },
+    "9": {
+        "name": "DECORARTE",
+        "url": r"https://decorarttecidos.com/api/get_data_for_artigo_view/",
+        "url_estampas": r"https://decorarttecidos.com/api/search_estampas/",
+        "pathImage": r"https://sistema.decorarttecidos.com/upload_artigo_images/",
+        "codPrefix": "DEC",
+        "id_fornecedor": 18152908053,
     },
 }
 

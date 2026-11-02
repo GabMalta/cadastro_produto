@@ -1,0 +1,3328 @@
+{
+    "id": null,
+    "nome": "10 Metros Tecido Seda Pluma Crepe Salina (10m x 1,47m)",
+    "codigo": "10m-D478",
+    "preco": 142.99,
+    "fornecedor": {
+        "id": 720948394,
+        "contato": {
+            "id": 13203733926,
+            "nome": "Aquarela"
+        },
+        "codigo": "",
+        "precoCusto": 11.49,
+        "precoCompra": 11.49
+    },
+    "tipo": "P",
+    "situacao": "A",
+    "formato": "V",
+    "descricaoCurta": "<h3 style=\"text-align: center;\"><span><u>Cada unidade representa 10 metros de tecido e cada unidade comprada será cortado o total de metragem linear.</u></span></h3>\n<h3 style=\"text-align: center;\"><span><u>Por exemplo:</u></span></h3>\n<h3 style=\"text-align: center;\"><span><u> </u></span></h3>\n<h3 style=\"text-align: center;\"><span><u>1 unidade: 10m x 1.47m</u></span></h3>\n<h3 style=\"text-align: center;\"><span><u>2 unidades: 20m x 1.47m</u></span></h3>\n<h3 style=\"text-align: center;\"><span><u>3 unidades: 30m x 1.47m</u></span></h3>\n<h3 style=\"text-align: center;\"><span><u> </u></span></h3>\n<h3 style=\"text-align: center;\"><u><span style=\"vertical-align: inherit;\"></span></u></h3>\n<h3 style=\"text-align: center;\"><span><u>e assim sucessivamente.</u></span></h3>\n\n<h3 style=\"text-align: center;\"><span style=\"text-decoration-line: underline;\"><span><span style=\"vertical-align: inherit;\"></span></span></span></h3>\n<h3 style=\"text-align: center;\"><span style=\"text-decoration-line: underline;\"><span>Informações do Tecido</span></span></h3>\n<p style=\"text-align: center;\"><strong>Tecido Seda Pluma Crepe Salina</strong></p>\n<p style=\"text-align: center;\"><strong>Composição: 96%POLIESTER \r\n4%ELASTANO </strong></p>\n<p style=\"text-align: center;\"><strong>Largura : 1.47 Metros</strong></p>\n<br>\n\n\n    \n\n<p>O crepe seda pluma é um tecido leve e delicado, da família dos crepes — tecidos conhecidos pela trama levemente granulada que surge da torção dos fios em sentidos opostos durante a tecelagem. Essa variação une a leveza da pluma ao caimento fluido que lembra a seda, daí o nome. É a escolha certa de quem procura um tecido crepe para vestido de festa ou peça casual com caimento solto, sem peso e sem marcar o corpo.</p><h2>Para que serve o crepe seda pluma</h2><p>Por ser leve e de caimento fluido, o crepe seda pluma rende bem em peças que pedem movimento e leveza. É uma das variações de crepe de seda mais versáteis pra quem costura pra vender ou pra uso próprio.</p><ul><li>Vestidos de festa com caimento solto e fluido</li><li>Blusas e camisas leves pro dia a dia</li><li>Saias com queda macia</li><li>Peças de alfaiataria leve, sem rigidez</li></ul><h2>Toque e caimento do crepe seda pluma</h2><p>A superfície é lisa ao olhar, mas com aquela textura levemente granulada típica do crepe ao passar a mão — é essa trama que dá o toque macio e evita que o tecido grude no corpo. O caimento é fluido, parecido com o da seda e da musseline, o que explica por que costureiras comparam os três quando procuram um tecido com queda leve e sem volume extra. Quem já trabalhou com musseline ou crepe de seda reconhece esse comportamento: a peça acompanha o movimento sem perder a forma.</p><h2>Antes de comprar: sobre a cor</h2><p>Fotos de tecido sofrem variação natural de tela pra tela, e tecidos tingidos em lote podem ter pequenas diferenças de tom entre partidas de produção. Isso é comum na família dos crepes e não compromete a qualidade — mas vale considerar se o seu projeto depende de uma cor exata, especialmente em compras feitas em momentos diferentes.</p><h2>Perguntas frequentes</h2><h3>O que é o crepe seda pluma?</h3><p>É uma variação leve e delicada dentro da família dos tecidos crepe, com toque macio, superfície levemente granulada e caimento fluido que lembra ao mesmo tempo a seda e uma pluma — daí o nome.</p><h3>Seda pluma é igual a musseline?</h3><p>São tecidos parecidos no comportamento: ambos leves e de caimento fluido. A diferença está na trama — o crepe tem aquela textura levemente granulada característica, enquanto a musseline costuma ser mais lisa ao toque.</p><h3>Serve para vestido de festa?</h3><p>Sim. É um dos usos mais procurados do crepe seda pluma, justamente pelo caimento solto e fluido que não marca o corpo nem pesa na peça.</p><h3>A cor pode vir diferente da foto?</h3><p>Pode haver pequena variação de tom entre lotes de produção, algo comum em tecidos tingidos. Se seu projeto exige cor exata, isso vale levar em conta na hora de comprar.</p>\n",
+    "dataValidade": null,
+    "unidade": "Mt",
+    "pesoLiquido": 1.5,
+    "pesoBruto": 1.5,
+    "volumes": null,
+    "itensPorCaixa": null,
+    "gtin": null,
+    "gtinEmbalagem": null,
+    "tipoProducao": "T",
+    "condicao": 1,
+    "freteGratis": "False",
+    "marca": "Legítima Textil",
+    "descricaoComplementar": null,
+    "linkExterno": null,
+    "observacoes": null,
+    "categoria": {
+        "id": 2432774
+    },
+    "estoque": {
+        "minimo": null,
+        "maximo": null,
+        "crossDocking": null,
+        "localizacao": null
+    },
+    "actionEstoque": null,
+    "dimensoes": {
+        "largura": 7.0,
+        "altura": 7.0,
+        "profundidade": 10.0,
+        "unidadeMedida": 1
+    },
+    "tributacao": {
+        "origem": 2,
+        "nFCI": null,
+        "ncm": "5407.52.10",
+        "cest": null,
+        "codigoListaServicos": null,
+        "spedTipoItem": null,
+        "codigoItem": null,
+        "percentualTributos": 0,
+        "valorBaseStRetencao": 0,
+        "valorStRetencao": 0,
+        "valorICMSSubstituto": 0,
+        "codigoExcecaoTipi": null,
+        "classeEnquadramentoIpi": null,
+        "valorIpiFixo": 0,
+        "codigoSeloIpi": null,
+        "valorPisFixo": 0,
+        "valorCofinsFixo": 0,
+        "codigoANP": null,
+        "descricaoANP": null,
+        "percentualGLP": 0,
+        "percentualGasNacional": 0,
+        "percentualGasImportado": 0,
+        "valorPartida": 0,
+        "tipoArmamento": 0,
+        "descricaoCompletaArmamento": null,
+        "dadosAdicionais": null,
+        "grupoProduto": {
+            "id": 0
+        }
+    },
+    "midia": {
+        "video": {
+            "url": null
+        },
+        "imagens": {
+            "externas": [],
+            "internas": [],
+            "imagensURL": [
+                {
+                    "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478%5CCapa/1-CAPA+6+-+CAPA+%2810.0m+8%29.jpg"
+                },
+                {
+                    "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478%5CCapa/2-CAPA+9+-+CAPA+%2810.0m+8%29.jpg"
+                },
+                {
+                    "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478%5CCapa/3-CAPA+3+-+CAPA+%2810.0m+8%29.jpg"
+                },
+                {
+                    "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478%5CCapa/CAPA+INFO+LEGITIMA.jpg"
+                },
+                {
+                    "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478%5CCapa/IA_01.jpg"
+                }
+            ]
+        }
+    },
+    "camposCustomizados": [
+        {
+            "idCampoCustomizado": 2668618,
+            "idVinculo": 752799787,
+            "valor": "227760129",
+            "item": "Legítima Têxtil"
+        },
+        {
+            "idCampoCustomizado": 2668619,
+            "idVinculo": 752799788,
+            "valor": "227760240",
+            "item": "China"
+        },
+        {
+            "idCampoCustomizado": 2668624,
+            "idVinculo": 752799790,
+            "valor": "10m x 1.47m",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 2668654,
+            "idVinculo": 752799792,
+            "valor": "SEDA PLUMA CREPE SALINA",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 2668655,
+            "idVinculo": 752799793,
+            "valor": "Tecido",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 2668658,
+            "idVinculo": 752799794,
+            "valor": "96%POLIESTER \r\n4%ELASTANO ",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 2668659,
+            "idVinculo": 752799795,
+            "valor": "10",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 2668660,
+            "idVinculo": 752799796,
+            "valor": "1",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 2668665,
+            "idVinculo": 752799798,
+            "valor": "",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 3480772,
+            "idVinculo": 1004684146,
+            "valor": "315789973",
+            "item": "Não"
+        },
+        {
+            "idCampoCustomizado": 3481925,
+            "idVinculo": 1042821908,
+            "valor": "1",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 3488587,
+            "idVinculo": 0,
+            "valor": "",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 3627028,
+            "idVinculo": 1042821909,
+            "valor": "Legítima Têxtil",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 3627057,
+            "idVinculo": 1042821910,
+            "valor": "333803718",
+            "item": "Rolo"
+        },
+        {
+            "idCampoCustomizado": 3676328,
+            "idVinculo": 1042821911,
+            "valor": "337350351",
+            "item": "Multicolorido"
+        },
+        {
+            "idCampoCustomizado": 3676332,
+            "idVinculo": 1042821912,
+            "valor": "Vestidos Fluídos, Blusas e Camisas Femininas, Saias Midi e Lápis, Macacões e Conjuntos, Roupas de Festa e Cerimônia",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 3676335,
+            "idVinculo": 1042821913,
+            "valor": "1.5",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 3676337,
+            "idVinculo": 1042821914,
+            "valor": "true",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 3676338,
+            "idVinculo": 1042821915,
+            "valor": "true",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 3676340,
+            "idVinculo": 1042821916,
+            "valor": "true",
+            "item": ""
+        },
+        {
+            "idCampoCustomizado": 3676440,
+            "idVinculo": 1043070256,
+            "valor": "7x7x10",
+            "item": ""
+        }
+    ],
+    "variacoes": [
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Amarelo Manteiga 207",
+            "codigo": "10m-D478-207",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Amarelo+Manteiga+207.jpeg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Amarelo Ouro 27",
+            "codigo": "10m-D478-27",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Amarelo+Ouro+27.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Azul Bebe 314",
+            "codigo": "10m-D478-314",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Azul+Bebe+314.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Azul Marinho 213",
+            "codigo": "10m-D478-213",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Azul+Marinho+213.jpeg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Azul Royal 219",
+            "codigo": "10m-D478-219",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Azul+Royal+219.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Azul Serenity 465",
+            "codigo": "10m-D478-465",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Azul+Serenity+465.jpeg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Bege 108",
+            "codigo": "10m-D478-108",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Bege+108.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Bege 252",
+            "codigo": "10m-D478-252",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Bege+252.jpeg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Bordo 103",
+            "codigo": "10m-D478-103",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Bordo+103.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Branco 02",
+            "codigo": "10m-D478-02",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Branco+02.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Fucsia 392",
+            "codigo": "10m-D478-392",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Fucsia+392.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Fucsia 83",
+            "codigo": "10m-D478-83",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Fucsia+83.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Laranja 243",
+            "codigo": "10m-D478-243",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Laranja+243.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Lilas 18",
+            "codigo": "10m-D478-18",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Lilas+18.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Marrom 10",
+            "codigo": "10m-D478-10",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Marrom+10.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Marsala 125",
+            "codigo": "10m-D478-125",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Marsala+125.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Mostarda 94",
+            "codigo": "10m-D478-94",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Mostarda+94.jpeg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Off 78",
+            "codigo": "10m-D478-78",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Off+78.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Preto 01",
+            "codigo": "10m-D478-01",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Preto+01.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Rosa Bebe 216",
+            "codigo": "10m-D478-216",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Rosa+Bebe+216.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Rosa Chiclete 61",
+            "codigo": "10m-D478-61",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Rosa+Chiclete+61.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Rose 430",
+            "codigo": "10m-D478-430",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Rose+430.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Salmao 320",
+            "codigo": "10m-D478-320",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Salmao+320.jpeg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Terracota 143",
+            "codigo": "10m-D478-143",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Terracota+143.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Verde Bandeira 74",
+            "codigo": "10m-D478-74",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Verde+Bandeira+74.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Verde Esmeralda 72",
+            "codigo": "10m-D478-72",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Verde+Esmeralda+72.jpeg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Verde Lima 195",
+            "codigo": "10m-D478-195",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Verde+Lima+195.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Verde Menta 496",
+            "codigo": "10m-D478-496",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Verde+Menta+496.jpeg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Verde Oliva 138",
+            "codigo": "10m-D478-138",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Verde+Oliva+138.jpeg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        },
+        {
+            "id": null,
+            "nomeVariacao": "Cor:Vermelho 21",
+            "codigo": "10m-D478-21",
+            "preco": 142.99,
+            "precoCusto": 11.49,
+            "estoque": {
+                "minimo": 0,
+                "maximo": 0,
+                "crossdocking": 0,
+                "localizacao": null,
+                "saldoVirtualTotal": 0
+            },
+            "tipo": "P",
+            "situacao": "A",
+            "formato": "S",
+            "descricaoCurta": null,
+            "imagemURL": null,
+            "dataValidade": null,
+            "unidade": "Mt",
+            "pesoLiquido": 1.5,
+            "pesoBruto": 1.5,
+            "volumes": 0,
+            "itensPorCaixa": 0,
+            "gtin": null,
+            "gtinEmbalagem": null,
+            "tipoProducao": "T",
+            "condicao": 1,
+            "freteGratis": false,
+            "marca": "Legítima Textil",
+            "descricaoComplementar": null,
+            "linkExterno": null,
+            "observacoes": null,
+            "descricaoEmbalagemDiscreta": null,
+            "categoria": {
+                "id": 2432774
+            },
+            "fornecedor": {
+                "id": 720948394,
+                "contato": {
+                    "id": 13203733926,
+                    "nome": "Aquarela"
+                },
+                "codigo": "",
+                "precoCusto": 11.49,
+                "precoCompra": 11.49
+            },
+            "actionEstoque": null,
+            "dimensoes": {
+                "largura": 7.0,
+                "altura": 7.0,
+                "profundidade": 10.0,
+                "unidadeMedida": 1
+            },
+            "tributacao": {
+                "origem": 2,
+                "nFCI": null,
+                "ncm": "5407.52.10",
+                "cest": null,
+                "codigoListaServicos": null,
+                "spedTipoItem": null,
+                "codigoItem": null,
+                "percentualTributos": 0,
+                "valorBaseStRetencao": 0,
+                "valorStRetencao": 0,
+                "valorICMSSubstituto": 0,
+                "codigoExcecaoTipi": null,
+                "classeEnquadramentoIpi": null,
+                "valorIpiFixo": 0,
+                "codigoSeloIpi": null,
+                "valorPisFixo": 0,
+                "valorCofinsFixo": 0,
+                "codigoANP": null,
+                "descricaoANP": null,
+                "percentualGLP": 0,
+                "percentualGasNacional": 0,
+                "percentualGasImportado": 0,
+                "valorPartida": 0,
+                "tipoArmamento": 0,
+                "descricaoCompletaArmamento": null,
+                "dadosAdicionais": null,
+                "grupoProduto": {
+                    "id": 0
+                }
+            },
+            "midia": {
+                "video": {
+                    "url": null
+                },
+                "imagens": {
+                    "externas": [],
+                    "internas": [],
+                    "imagensURL": [
+                        {
+                            "link": "https://legitimatextil.s3.us-east-2.amazonaws.com/catalogo/SEDA+PLUMA+CREPE+SALINA+D478/Vermelho+21.jpg"
+                        }
+                    ]
+                }
+            },
+            "linhaProduto": null,
+            "estrutura": null,
+            "camposCustomizados": []
+        }
+    ]
+}

@@ -3,7 +3,7 @@ from openai import OpenAI
 from decouple import config
 
 
-def create_description_gpt(keyword):
+def create_description_gpt(keyword, largura_tecido=None, composition=None):
 
     context = """
 Você é um especialista em copywriting para e-commerce, focado em SEO para Shopee e alta conversão. Sua tarefa é criar descrições de produtos que sejam persuasivas, informativas e otimizadas para busca.
@@ -52,7 +52,7 @@ Garanta agora o tecido que vai elevar o nível da sua decoração! Aproveite nos
                 "role": "system",
                 "content": context,
             },
-            {"role": "user", "content": f"Crie uma descrição para: {keyword}"},
+            {"role": "user", "content": f"Crie uma descrição para: {keyword}" + (f", com largura de {largura_tecido} metros" if largura_tecido else "") + (f", composição: {composition}" if composition else "")},
         ],
         model="gpt-5-mini"
     )

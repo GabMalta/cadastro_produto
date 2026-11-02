@@ -13,12 +13,8 @@
 <p style="text-align: center;"><strong>{{nome}}</strong></p>
 <p style="text-align: center;"><strong>Composição: {{composition}}</strong></p>
 <p style="text-align: center;"><strong>Largura : {{larg}} Metros</strong></p>
+<br>
 
 {% if desc_gpt %}
-<h2 style="text-align: center;"><span style="text-decoration-line: underline;">Utilidades Para O {{nome}}</span></h2>
-<pre style="text-align: center;">
     {{desc_gpt}}
-</pre>
-
-
 {% endif %}

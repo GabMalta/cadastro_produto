@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont, UnidentifiedImageError
-import os, random
+import os, random, math
 
 from apps.data_scraping.utils.write_cover_title import write_cover_title
 
@@ -92,20 +92,20 @@ class CoverProduct:
         altura_banner=150,
     ):
         self.set_paths_cover()
-        
+
         if title and len(title) > 20:
             print("\nAVISO: O título é muito longo e pode não caber corretamente na faixa da capa.")
-            
+
             while True:
                 print(f"\nErro em: {title}\n")
                 title = input("Por favor, insira um título para a capa com até 20 caracteres: \n").upper()
                 if len(title) <= 20:
                     break
-        
+
         if self.len_path_images < 4:
             print("\nERROR: A PASTA FOTOS DEVE TER PELO MENOS 4 IMAGENS PARA SE CRIAR ESSE TIPO DE CAPA")
             return None
-        
+
         # 1. Canvas
         canvas = self.new_background()
         draw = ImageDraw.Draw(canvas)
@@ -115,11 +115,11 @@ class CoverProduct:
         altura_img = self.size_cover - altura_banner
 
         # 3. Processa e cola as imagens
-        
+
         images = random.sample(self.images, 4)
-        
+
         for i, img_path in enumerate(images):
-            
+
             path_completo = os.path.join(self.path_images, img_path)
 
             img_processada = self.aspect_fill_crop(path_completo, largura_img, altura_img)
@@ -138,11 +138,11 @@ class CoverProduct:
         pos_y = altura_img + (altura_banner - text_h) / 2 - 10
 
         draw.text((pos_x, pos_y), title, fill=font_color, font=FONTE_PADRAO)
-        
+
         cover_save = os.path.join(self.path_save, f"{name_save}.jpg")
 
         canvas.save(cover_save, quality=95)
-        
+
         return cover_save
 
     def cover_grid(
@@ -235,7 +235,9 @@ class CoverProduct:
                 case 2:
                     props = {"resize": (size, size), "positions": (position, 0)}
 
-            image = self.aspect_fill_crop(os.path.join(self.path_images, img), props["resize"][0], props["resize"][1])
+            image = self.aspect_fill_crop(
+                os.path.join(self.path_images, img), props["resize"][0], props["resize"][1]
+            )
             background.paste(image, props["positions"])
 
         cover_save = os.path.join(self.path_save, f"{name_save}.jpg")
@@ -319,7 +321,9 @@ class CoverProduct:
                         ),
                     }
 
-            image = self.aspect_fill_crop(os.path.join(self.path_images, img), props["resize"][0], props["resize"][1])
+            image = self.aspect_fill_crop(
+                os.path.join(self.path_images, img), props["resize"][0], props["resize"][1]
+            )
             background.paste(image, props["positions"])
 
         cover_save = os.path.join(self.path_save, f"{name_save}.jpg")
@@ -402,10 +406,12 @@ class CoverProduct:
                         "positions": (
                             self.percent_of_size(0.5078125),
                             self.percent_of_size(0.5078125),
-                        ),  
+                        ),
                     }
 
-            image = self.aspect_fill_crop(os.path.join(self.path_images, img), props["resize"][0], props["resize"][1])
+            image = self.aspect_fill_crop(
+                os.path.join(self.path_images, img), props["resize"][0], props["resize"][1]
+            )
 
             background.paste(image, props["positions"])
 
@@ -423,6 +429,221 @@ class CoverProduct:
                 font_color=font_color,
                 promocao=self.promocao,
             )
+        return cover_save
+
+    def cover_diagonal_stripes(
+        self,
+        name_save,
+        title=None,
+        fill=None,
+        stroke_fill="#fff",
+        stroke_width=5,
+        font_color="#000",
+    ):
+        self.set_paths_cover()
+
+        if self.len_path_images < 5:
+            print("\nERROR: A PASTA FOTOS DEVE TER PELO MENOS 5 IMAGENS PARA SE CRIAR ESSE TIPO DE CAPA")
+            return None
+
+        canvas = self.new_background()
+
+        faixa_largura = self.size_cover // 5
+        offset = int(self.size_cover * 0.3)
+
+        images = random.sample(self.images, 5)
+
+        for i, img_name in enumerate(images):
+            path_img = os.path.join(self.path_images, img_name)
+
+            img = self.aspect_fill_crop(path_img, self.size_cover, self.size_cover)
+
+            mask = Image.new("L", (self.size_cover, self.size_cover), 0)
+            draw = ImageDraw.Draw(mask)
+
+            x_start = i * faixa_largura
+            x_end = (i + 1) * faixa_largura
+
+            if i == 0:
+                polygon = [
+                    (0, 0),
+                    (x_end - offset, 0),
+                    (x_end + offset, self.size_cover),
+                    (0, self.size_cover),
+                ]
+            elif i == len(images) - 1:
+                polygon = [
+                    (x_start - offset, 0),
+                    (self.size_cover, 0),
+                    (self.size_cover, self.size_cover),
+                    (x_start + offset, self.size_cover),
+                ]
+            else:
+                polygon = [
+                    (x_start - offset, 0),
+                    (x_end - offset, 0),
+                    (x_end + offset, self.size_cover),
+                    (x_start + offset, self.size_cover),
+                ]
+
+            draw.polygon(polygon, fill=255)
+
+            canvas.paste(img, (0, 0), mask)
+
+        cover_save = os.path.join(self.path_save, f"{name_save}.jpg")
+
+        canvas.save(cover_save, quality=95)
+
+        if title:
+            write_cover_title(
+                cover_save,
+                title,
+                fill=fill,
+                stroke_fill=stroke_fill,
+                stroke_width=stroke_width,
+                font_color=font_color,
+                promocao=self.promocao,
+            )
+
+        return cover_save
+
+    def _wave_boundary(self, base_x, amplitude, wavelength, steps):
+        return [
+            (base_x + amplitude * math.sin(2 * math.pi * y / wavelength), y)
+            for y in range(0, self.size_cover + 1, steps)
+        ]
+
+    def _zigzag_boundary(self, base_x, amplitude, segment_height):
+        points = []
+        y = 0
+        direction = 1
+        while y <= self.size_cover:
+            points.append((base_x + amplitude * direction, y))
+            y += segment_height
+            direction *= -1
+        if points[-1][1] != self.size_cover:
+            points.append((base_x + amplitude * direction, self.size_cover))
+        return points
+
+    def _straight_boundary(self, x):
+        return [(x, 0), (x, self.size_cover)]
+
+    def _build_stripe_mask(self, left_points, right_points):
+        mask = Image.new("L", (self.size_cover, self.size_cover), 0)
+        draw = ImageDraw.Draw(mask)
+        polygon = right_points + left_points[::-1]
+        draw.polygon(polygon, fill=255)
+        return mask
+
+    def cover_wave_stripes(
+        self,
+        name_save,
+        title=None,
+        fill=None,
+        stroke_fill="#fff",
+        stroke_width=5,
+        font_color="#000",
+    ):
+        self.set_paths_cover()
+
+        if self.len_path_images < 5:
+            print("\nERROR: A PASTA FOTOS DEVE TER PELO MENOS 5 IMAGENS PARA SE CRIAR ESSE TIPO DE CAPA")
+            return None
+
+        canvas = self.new_background()
+        faixa_largura = self.size_cover // 5
+        amplitude = self.size_cover * 0.05
+        wavelength = self.size_cover * 0.25
+        steps = 2
+
+        images = random.sample(self.images, 5)
+
+        for i, img_name in enumerate(images):
+            path_img = os.path.join(self.path_images, img_name)
+            img = self.aspect_fill_crop(path_img, self.size_cover, self.size_cover)
+
+            if i == 0:
+                left_pts = self._straight_boundary(0)
+            else:
+                left_pts = self._wave_boundary(i * faixa_largura, amplitude, wavelength, steps)
+
+            if i == len(images) - 1:
+                right_pts = self._straight_boundary(self.size_cover)
+            else:
+                right_pts = self._wave_boundary((i + 1) * faixa_largura, amplitude, wavelength, steps)
+
+            mask = self._build_stripe_mask(left_pts, right_pts)
+            canvas.paste(img, (0, 0), mask)
+
+        cover_save = os.path.join(self.path_save, f"{name_save}.jpg")
+        canvas.save(cover_save, quality=95)
+
+        if title:
+            write_cover_title(
+                cover_save,
+                title,
+                fill=fill,
+                stroke_fill=stroke_fill,
+                stroke_width=stroke_width,
+                font_color=font_color,
+                promocao=self.promocao,
+            )
+
+        return cover_save
+
+    def cover_zigzag_stripes(
+        self,
+        name_save,
+        title=None,
+        fill=None,
+        stroke_fill="#fff",
+        stroke_width=5,
+        font_color="#000",
+    ):
+        self.set_paths_cover()
+
+        if self.len_path_images < 5:
+            print("\nERROR: A PASTA FOTOS DEVE TER PELO MENOS 5 IMAGENS PARA SE CRIAR ESSE TIPO DE CAPA")
+            return None
+
+        canvas = self.new_background()
+        faixa_largura = self.size_cover // 5
+        amplitude = self.size_cover * 0.05
+        segment_height = int(self.size_cover * 0.1)
+
+        images = random.sample(self.images, 5)
+
+        for i, img_name in enumerate(images):
+            path_img = os.path.join(self.path_images, img_name)
+            img = self.aspect_fill_crop(path_img, self.size_cover, self.size_cover)
+
+            if i == 0:
+                left_pts = self._straight_boundary(0)
+            else:
+                left_pts = self._zigzag_boundary(i * faixa_largura, amplitude, segment_height)
+
+            if i == len(images) - 1:
+                right_pts = self._straight_boundary(self.size_cover)
+            else:
+                right_pts = self._zigzag_boundary((i + 1) * faixa_largura, amplitude, segment_height)
+
+            mask = self._build_stripe_mask(left_pts, right_pts)
+            canvas.paste(img, (0, 0), mask)
+
+        cover_save = os.path.join(self.path_save, f"{name_save}.jpg")
+        canvas.save(cover_save, quality=95)
+
+        if title:
+            write_cover_title(
+                cover_save,
+                title,
+                fill=fill,
+                stroke_fill=stroke_fill,
+                stroke_width=stroke_width,
+                font_color=font_color,
+                promocao=self.promocao,
+            )
+
         return cover_save
 
     def cover_full_logo(self, title, name_save, company="LEGITIMA"):
@@ -485,4 +706,3 @@ class CoverProduct:
         result.save(cover_save)
 
         return cover_save
-

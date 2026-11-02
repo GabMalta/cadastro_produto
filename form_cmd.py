@@ -4,6 +4,8 @@ import os
 from apps.chat_gpt.create_description import create_description_gpt
 from apps.data_scraping.create_covers import create_covers
 from apps.data_scraping.utils import save_product_json
+from nucleo_ia.descricao_completa import criar_descricao_completa
+from nucleo_ia.criar_inspiracao import criar_inspiracao
 from functions import (
     import_images_of_company,
     input_choices,
@@ -34,6 +36,7 @@ def form_cmd() -> dict:
 
     elif operation_type == "BAIXAR/CADASTRAR":
         imported_product = import_images_of_company()
+        imported_product = verify_path_product(imported_product['path_save'], upload_for_s3=False)
 
     my_company = input_choices(
         settings.MY_COMPANYS, "PARA QUAL EMPRESA SERÁ FEITO O CADASTRO?"
@@ -111,7 +114,22 @@ def form_cmd() -> dict:
         "DESEJA ADICIONAR UMA DESCRIÇÃO CRIADA PELO CHAT GPT?",
     )
 
-    desc_gpt = create_description_gpt(nome) if desc_gpt else False
+    #desc_gpt = create_description_gpt(nome) if desc_gpt else False
+    descricao_briefing = criar_descricao_completa(nome=nome, codigo=product_json["cod"] or "") if desc_gpt else False
+    desc_gpt = descricao_briefing.get("descricao")
+    briefing = descricao_briefing.get("briefing")
+    
+    if briefing:
+        with open(rf"{imported_product["pictures_directory"]}/briefing.md", "w", encoding="utf-8") as a:
+            a.write(briefing)
+            
+    inspiracao = input_choices(
+        {"S": True, "N": False},
+        "DESEJA CRIAR UMA FOTO DE INSPIRACAO?",
+    )
+    
+    if inspiracao:
+        criar_inspiracao(nome=nome, path_fotos=imported_product["pictures_directory"], path_cover=imported_product["cover_directory"])
 
     estoque_padrao = input_number(
         "QUAL A QUANTIDADE ESTOQUE SERÁ CADASTRADO PARA AS VARIAÇÕES?"

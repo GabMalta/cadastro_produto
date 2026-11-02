@@ -45,9 +45,9 @@ def import_images(company: str, cod_or_url: str, fabric_name: str, path: str, up
             "SE PRECISAR FAZER ALTERAÇÕES NA PASTA, COMO NOME DE COR, ETC... FAÇA E DEPOIS PRESSIONE ENTER PARA FAZER UPLOAD DOS ARQUIVOS..."
         )
         upload_folder_to_s3_parallel(pictures_directory, product["folder_name"])
-
+    
     return {
-        "path": save_path,
+        "path_save": save_path,
         "pictures_directory": pictures_directory,
         "cover_directory": cover_directory,
     }

@@ -1,8 +1,18 @@
 import pandas as pd
 from price_generator import calculate_price
-import os
+import os, glob
 
-df_custos = pd.read_csv(r"C:\Users\gabri\www\extracao_precos\precos2.csv", sep=";", encoding="utf-8-sig")
+
+def get_df_custos() -> pd.DataFrame:
+    path_preco_custo = r"C:\Users\gabri\www\extracao_precos\planilhas"
+    arquivo = max(glob.glob(os.path.join(path_preco_custo, "precos *.csv")), key=os.path.getctime)
+
+    df = pd.read_csv(arquivo, sep=",", encoding="utf-8")
+    df["preco"] = df["preco"].str.replace(",", ".").astype(float)
+    return df
+
+df_custos = get_df_custos()
+
 def calcular_preco_venda(row):    
         try:
             custo = float(row["custos"])

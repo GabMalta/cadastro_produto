@@ -1,12 +1,15 @@
-import json
+import json, os, glob
 
 from bling_api.bling import BlingApi
 import pandas as pd
 
 
-def get_df_custos():
-    path_preco_custo = r"C:\Users\gabri\www\extracao_precos\precos_latest.xlsx"
-    df = pd.read_excel(path_preco_custo)
+def get_df_custos() -> pd.DataFrame:
+    path_preco_custo = r"C:\Users\gabri\www\extracao_precos\planilhas"
+    arquivo = max(glob.glob(os.path.join(path_preco_custo, "precos *.csv")), key=os.path.getctime)
+
+    df = pd.read_csv(arquivo, sep=",", encoding="utf-8")
+    df["preco"] = df["preco"].str.replace(",", ".").astype(float)
     return df
 
 
@@ -31,7 +34,7 @@ while True:
     if len(products) == 0:
         break
 
-    print("Página:", i)
+    print("Página bling:", i)
     df_precos_mudar = []
     for product in products:
         try:
@@ -75,8 +78,12 @@ while True:
         )
         df_precos_mudar_new.to_csv(r"precos_a_mudar.csv", index=False)
 
-    with open("cod_sem_custo.json", "r") as f:
-        cod_sem_custo_old = json.load(f)
+    try:
+        with open("cod_sem_custo.json", "r") as f:
+            cod_sem_custo_old = json.load(f)
+    except FileNotFoundError:
+        cod_sem_custo_old = []
+
 
     cod_sem_custo.extend(cod_sem_custo_old)
 
